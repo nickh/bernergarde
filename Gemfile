@@ -7,3 +7,7 @@ gem 'haml'
 group :test, :development do
   gem 'rspec-rails'
 end
+
+group :test do
+  gem 'factory_girl_rails', '1.0'
+end
