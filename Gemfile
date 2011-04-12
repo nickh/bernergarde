@@ -6,6 +6,7 @@ gem 'haml'
 
 group :test, :development do
   gem 'rspec-rails'
+  gem 'faker'
 end
 
 group :test do
