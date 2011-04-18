@@ -12,7 +12,8 @@ end
 # Create people with a kennel name
 def make_breeders
   (1..10).collect{|i| Person.create!(
-      :name         => Faker::Name.name,
+      :first_name   => Faker::Name.first_name,
+      :last_name    => Faker::Name.last_name,
       :country      => 'US',
       :address      => Faker::Address.street_address + ', ' + Faker::Address.city + ' ' + Faker::Address.us_state_abbr + ' ' + Faker::Address.zip,
       :email        => Faker::Internet.email,
@@ -60,8 +61,9 @@ def make_owners
   Dog.where(:owner_id => nil).each do |dog|
     n = rand(owners.size * 4)
     dog.update_attribute(:owner, owners[n] || Person.create(
-      :name         => Faker::Name.name,
-      :country      => Faker::Address.country,
+      :first_name   => Faker::Name.first_name,
+      :last_name    => Faker::Name.last_name,
+      :country      => 'US',
       :address      => Faker::Address.street_address + ', ' + Faker::Address.city + ' ' + Faker::Address.us_state_abbr + ' ' + Faker::Address.zip,
       :email        => Faker::Internet.email,
       :phone        => Faker::PhoneNumber.phone_number,

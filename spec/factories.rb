@@ -1,10 +1,11 @@
 Factory.define :person do |person|
-  person.name 'Dog Lover'
+  person.first_name Faker::Name.first_name
+  person.last_name  Faker::Name.last_name
 end
 
 Factory.define :dog do |dog|
-  dog.registered_name "Westminster's HiFiDolity"
-  dog.call_name       'Fido'
+  dog.registered_name Faker::Company.name + "'s " + Faker::Company.catch_phrase
+  dog.call_name       Faker::Name.first_name
   dog.female          false
 end
 

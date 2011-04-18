@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110110164709) do
+ActiveRecord::Schema.define(:version => 20110414143114) do
 
   create_table "certifications", :force => true do |t|
     t.string   "name"
@@ -86,7 +86,6 @@ ActiveRecord::Schema.define(:version => 20110110164709) do
   end
 
   create_table "people", :force => true do |t|
-    t.string   "name"
     t.string   "second_name"
     t.string   "country"
     t.string   "address"
@@ -102,6 +101,8 @@ ActiveRecord::Schema.define(:version => 20110110164709) do
     t.boolean  "master_household"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "first_name"
+    t.string   "last_name"
   end
 
   create_table "titles", :force => true do |t|

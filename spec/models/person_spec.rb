@@ -2,7 +2,8 @@ require 'spec_helper'
 
 describe Person do
   attrs = {
-    'name'             => :string,
+    'first_name'       => :string,
+    'last_name'        => :string,
     'second_name'      => :string,
     'country'          => :string,
     'address'          => :string,
