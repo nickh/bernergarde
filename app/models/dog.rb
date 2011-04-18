@@ -2,7 +2,7 @@ class Dog < ActiveRecord::Base
   belongs_to :owner, :class_name => 'Person'
   belongs_to :litter
   has_many :litters,
-           :finder_sql => 'SELECT litters.* FROM litters WHERE #{litter_foreign_key}=#{id}',
+           :finder_sql => proc {'SELECT litters.* FROM litters WHERE #{litter_foreign_key}=#{id}'},
            :before_add => :set_litter_parent
   has_many :completed_titles
   has_many :completed_certifications
