@@ -1,0 +1,23 @@
+%h2= t('links.heading')
+
+%ul.links
+  %li= link_to(t('links.bmdca'),       'http://www.bmdca.org/')
+  %li= link_to(t('links.akc'),         'http://www.akc.org/breeds/bernese_mountain_dog/index.cfm')
+  %li= link_to(t('links.ofa'),         'http://www.offa.org/')
+  %li= link_to(t('links.cerf'),        'http://www.vmdb.org/cerf.html')
+  %li= link_to(t('links.gdc'),         'http://www.gdcinstitute.org/')
+  %li= link_to(t('links.pennhip'),     'http://www.vet.upenn.edu/RyanHospital/SpecialtyCareServices/PennHIP/tabid/448/Default.aspx')
+  %li= link_to(t('links.podcasts'),    'http://www.akcchf.org/news-events/multimedia/podcasts/')
+  %li= link_to(t('links.vetgen'),      'http://www.vetgen.com/')
+  %li= link_to(t('links.camken'),      'http://www.bestbeau.ca/BMD_Health_Info_Links.html')
+  %li= link_to(t('links.berner_org'),  'http://www.berner.org/')
+  %li= link_to(t('links.berner_info'), 'http://www.jersey.net/~mountaindog/berner1/')
+
+%ul.more_info
+  %li= t('links.am',       :email => link_to('Lisbeth Plant', 'mailto:billisbeth@shaw.ca')).html_safe
+  %li= t('links.sas',      :email => link_to('Robin Camken',  'mailto:rcamken@yahoo.ca')).html_safe
+  %li= t('links.tumors',   :email => link_to('Mary Maliarik', 'mailto:mmaliarik@aol.com')).html_safe
+
+%ul.berner_l
+  %li= t('links.berner_l', :email => link_to('Pat Long',      'mailto:filemanager@bernergarde.org')).html_safe
+

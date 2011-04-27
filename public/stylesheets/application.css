@@ -1,0 +1,268 @@
+body.bgf {
+  /* Generic style definition for all pages */
+  padding-right: 5px;
+  /* Specific style definition for all pages */ }
+  body.bgf a {
+    color: #602e02; }
+  body.bgf span.critical {
+    color: #B00000;
+    font-weight: bold; }
+  body.bgf ul.links {
+    list-style-type: none; }
+    body.bgf ul.links > li {
+      display: inline;
+      margin-left: 30px; }
+    body.bgf ul.links > li:first-child {
+      margin-left: 0px; }
+  body.bgf ul.contacts {
+    clear: both;
+    list-style-type: none; }
+    body.bgf ul.contacts > li {
+      vertical-align: top;
+      width: 320px;
+      display: inline-block;
+      margin-top: 10px;
+      margin-left: 15px;
+      margin-right: 40px; }
+  body.bgf h2 {
+    background: #d2d2d2;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 0px 2px; }
+  body.bgf h3 {
+    font-size: 1.1em; }
+  body.bgf h4 {
+    font-size: 1em; }
+  body.bgf h3, body.bgf h4 {
+    background: #e8e8e8;
+    font-weight: bold;
+    padding: 3px 0px;
+    margin-top: 3px;
+    margin-bottom: 10px; }
+    body.bgf h3.short, body.bgf h4.short {
+      display: inline-block; }
+  body.bgf span.healthy_help {
+    color: #2C7037;
+    font-weight: bold; }
+  body.bgf > div.main {
+    position: relative;
+    width: 100%;
+    margin: 1px;
+    padding: 2px; }
+    body.bgf > div.main > div.header {
+      position: relative;
+      height: 150px;
+      padding: 2px 2px 2px 170px;
+      margin-bottom: 10px;
+      background: url("/images/BG_logo150.png") no-repeat 0px;
+      border-bottom: 2px solid black; }
+      body.bgf > div.main > div.header > h1 {
+        position: absolute;
+        bottom: 0px;
+        font-size: 1.3em;
+        font-weight: bold; }
+      body.bgf > div.main > div.header > ul.lang {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        margin-right: 2px;
+        margin-bottom: 2px; }
+        body.bgf > div.main > div.header > ul.lang > li {
+          display: inline;
+          list-style-type: none; }
+    body.bgf > div.main > div.nav {
+      position: absolute; }
+      body.bgf > div.main > div.nav > ul {
+        width: 134px;
+        border: 2px solid black;
+        background: #A74E3C;
+        list-style-type: none;
+        padding-left: 0px; }
+        body.bgf > div.main > div.nav > ul > li:hover {
+          background: #F8DA63; }
+          body.bgf > div.main > div.nav > ul > li:hover > a {
+            color: black; }
+        body.bgf > div.main > div.nav > ul > li:first-child {
+          border-top: none; }
+        body.bgf > div.main > div.nav > ul > li {
+          padding: 2px 15px;
+          border-top: 2px solid black;
+          text-align: center;
+          font-size: 1.0em;
+          line-height: 1.1em; }
+          body.bgf > div.main > div.nav > ul > li > a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none; }
+    body.bgf > div.main > div.content {
+      margin-left: 155px; }
+      body.bgf > div.main > div.content > span {
+        display: block; }
+        body.bgf > div.main > div.content > span > a {
+          text-decoration: none;
+          color: black;
+          font-size: 1.1em;
+          font-weight: bold;
+          background: #E8E8E8;
+          padding: 1px; }
+        body.bgf > div.main > div.content > span > p {
+          display: block;
+          margin: 10px 0px; }
+    body.bgf > div.main > div.footer {
+      clear: both;
+      border-top: 1px solid #9A9A9A; }
+      body.bgf > div.main > div.footer span {
+        display: block; }
+
+/* Per-page styles */
+/* The FAQ page has special ULs */
+body.faq > div.main > div.content > ul {
+  padding-left: 0px;
+  list-style-type: none; }
+  body.faq > div.main > div.content > ul > li > a {
+    color: #602E02;
+    font-weight: bold; }
+
+/* The repository page has a special notice section and special heading indentation */
+body.repository h3 {
+  margin-left: 5px; }
+body.repository h4 {
+  margin-left: 10px; }
+body.repository h3, body.repository h4 {
+  float: left;
+  clear: both;
+  margin-bottom: 3px; }
+body.repository > div.main > div.content > div.notice {
+  display: inline-block;
+  margin-left: 20px;
+  border: 2px solid #00008b;
+  background: #ffffcc;
+  color: black; }
+  body.repository > div.main > div.content > div.notice a {
+    color: #602e02; }
+  body.repository > div.main > div.content > div.notice > h3 {
+    background: none;
+    display: block;
+    float: none;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 5px; }
+  body.repository > div.main > div.content > div.notice > p {
+    margin-bottom: 5px; }
+  body.repository > div.main > div.content > div.notice > p.more {
+    text-align: center; }
+    body.repository > div.main > div.content > div.notice > p.more > a {
+      font-size: 1.1em;
+      font-weight: bold; }
+  body.repository > div.main > div.content > div.notice > ol {
+    margin-bottom: 10px;
+    margin-left: 5px; }
+
+/* The repository_p2 page has content ul settings,
+   and a special intermission paragraph */
+body.repository_p2 > div.main > div.content > p.intermission {
+  color: sienna;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-align: center; }
+body.repository_p2 > div.main > div.content > ul {
+  margin-left: 40px; }
+
+/* The trustees page has a special %dl for the photo directory */
+body.trustees > div.main > div.content > dl dt {
+  float: left;
+  clear: left;
+  margin-bottom: 10px; }
+body.trustees > div.main > div.content > dl dd {
+  float: left;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  font-weight: bold; }
+
+/* The data operators page has a special %ul for the contact list */
+body.data_operators > div.main > div.content > p {
+  clear: left; }
+body.data_operators > div.main > div.content > ul > li {
+  display: block;
+  width: auto;
+  clear: left;
+  vertical-align: bottom; }
+  body.data_operators > div.main > div.content > ul > li > span {
+    float: left;
+    vertical-align: bottom;
+    margin-left: 10px; }
+  body.data_operators > div.main > div.content > ul > li > span.name {
+    color: #822f2f;
+    font-size: 1.1em;
+    font-weight: bold; }
+    body.data_operators > div.main > div.content > ul > li > span.name:after {
+      content: ', '; }
+  body.data_operators > div.main > div.content > ul > li > span.email {
+    clear: left;
+    margin-left: 30px;
+    margin-bottom: 10px; }
+    body.data_operators > div.main > div.content > ul > li > span.email:before {
+      content: 'Email: '; }
+  body.data_operators > div.main > div.content > ul > li > span.country {
+    float: right; }
+
+/* The forms page has a special ul */
+body.forms > div.main > div.content > ul {
+  margin-left: 40px; }
+  body.forms > div.main > div.content > ul > li {
+    list-style-type: disc;
+    margin-bottom: 30px; }
+    body.forms > div.main > div.content > ul > li > a {
+      font-size: 1.1em; }
+
+/* The donations page has a special contact paragraph and a special notice */
+body.donations > div.main > div.content > p.contact {
+  font-size: 1.1em;
+  font-weight: bold; }
+body.donations > div.main > div.content > div.notice {
+  width: 50%;
+  border: 3px solid black;
+  background: #ffc;
+  color: black; }
+  body.donations > div.main > div.content > div.notice > h3 {
+    color: #602E02;
+    font-weight: bold;
+    background: none; }
+
+/* The studies page has a special detail ul */
+body.studies > div.main > div.content > ul > li > a {
+  font-weight: bold; }
+body.studies > div.main > div.content > ul.detail {
+  padding-left: 0px; }
+  body.studies > div.main > div.content > ul.detail > li {
+    list-style-type: none;
+    margin-top: 10px; }
+    body.studies > div.main > div.content > ul.detail > li:first-child {
+      margin-top: 0px; }
+    body.studies > div.main > div.content > ul.detail > li span {
+      display: block; }
+
+/* The articles page has a special dl */
+body.articles > div.main > div.content > dl > dt > span.author:before {
+  content: '('; }
+body.articles > div.main > div.content > dl > dt > span.author:after {
+  content: ')'; }
+body.articles > div.main > div.content > dl > dt > span.article_id {
+  margin-left: 15px;
+  font-size: 0.9em; }
+body.articles > div.main > div.content > dl > dd {
+  margin-bottom: 10px;
+  margin-left: 0px;
+  font-size: 0.9em; }
+
+/* The links page has some special unordered lists */
+body.links > div.main > div.content > ul {
+  padding-left: 0px;
+  list-style-type: none; }
+  body.links > div.main > div.content > ul > li {
+    font-size: 1.1em;
+    font-weight: bold; }
+body.links > div.main > div.content > ul.links > li {
+  display: block;
+  margin-left: 0px; }

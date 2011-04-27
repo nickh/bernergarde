@@ -1,0 +1,24 @@
+!!!
+
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+
+  %head
+    %title= t('site.title')
+    =csrf_meta_tag
+    =stylesheet_link_tag 'application'
+    =stylesheet_link_tag 'blueprint/screen', :media => 'screen'
+    =stylesheet_link_tag 'blueprint/print', :media => 'print'
+
+  %body{:class => ['bgf',bgf_page_class]}
+    .span-24.main
+      .header
+        %h1= t('site.header')
+        - if request.method == 'GET'
+          =render :partial => 'shared/lang'
+      .nav
+        =render :partial => 'shared/nav'
+      .content
+        =yield
+      .footer
+        %span= t('site.copyright')
+        %span= link_to 'webmaster@bernergarde.org', 'mailto:webmaster@bernergarde.org'

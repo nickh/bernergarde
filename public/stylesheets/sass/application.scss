@@ -1,0 +1,386 @@
+body.bgf {
+  /* Generic style definition for all pages */
+  padding-right: 5px;
+
+  a {
+    color: #602e02;
+  }
+  span.critical {
+    color: #B00000;
+    font-weight: bold;
+  }
+  ul.links {
+    list-style-type: none;
+    > li {
+      display: inline;
+      margin-left: 30px;
+    }
+    > li:first-child {
+      margin-left: 0px;
+    }
+  }
+  ul.contacts {
+    clear: both;
+    list-style-type: none;
+    > li {
+      vertical-align: top;
+      width: 320px;
+      display: inline-block;
+      margin-top: 10px;
+      margin-left: 15px;
+      margin-right: 40px;
+    }
+  }
+  h2 {
+    background: #d2d2d2;
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 0px 2px;
+  }
+  h3 {
+    font-size: 1.1em;
+  }
+  h4 {
+    font-size: 1em;
+  }
+  h3,h4 {
+    background: #e8e8e8;
+    font-weight: bold;
+    padding: 3px 0px;
+    margin-top: 3px;
+    margin-bottom: 10px;
+    &.short {
+      display: inline-block;
+    }
+  }
+  span.healthy_help {
+    color: #2C7037;
+    font-weight: bold;
+  }
+
+  /* Specific style definition for all pages */
+  > div.main {
+    position: relative;
+    width: 100%;
+    margin: 1px;
+    padding: 2px;
+    > div.header {
+      position: relative;
+      height: 150px;
+      padding: 2px 2px 2px 170px;
+      margin-bottom: 10px;
+      background: url('/images/BG_logo150.png') no-repeat 0px;
+      border-bottom: 2px solid black;
+      > h1 {
+        position: absolute;
+        bottom: 0px;
+        font-size: 1.3em;
+        font-weight: bold;
+      }
+      > ul.lang {
+        position: absolute;
+        bottom: 0px;
+        right: 0px;
+        margin-right: 2px;
+        margin-bottom: 2px;
+        > li {
+          display: inline;
+          list-style-type: none;
+        }
+      }
+    }
+    > div.nav {
+      position: absolute;
+      > ul {
+        width: 134px;
+        border: 2px solid black;
+        background: #A74E3C;
+        list-style-type: none;
+        padding-left: 0px;
+        > li:hover {
+          background: #F8DA63;
+          > a {
+            color: black;
+          }
+        }
+        > li:first-child {
+          border-top: none;
+        }
+        > li {
+          padding: 2px 15px;
+          border-top: 2px solid black;
+          text-align: center;
+          font-size: 1.0em;
+          line-height: 1.1em;
+          > a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    > div.content {
+      margin-left: 155px;
+
+      > span {
+        display: block;
+        > a {
+          text-decoration: none;
+          color: black;
+          font-size: 1.1em;
+          font-weight: bold;
+          background: #E8E8E8;
+          padding: 1px;
+        }
+        > p {
+          display: block;
+          margin: 10px 0px;
+        }
+      }
+    }
+    > div.footer {
+      clear: both;
+      border-top: 1px solid #9A9A9A;
+      span {
+        display: block;
+      }
+    }
+  }
+}
+
+/* Per-page styles */
+
+/* The FAQ page has special ULs */
+body.faq {
+  > div.main > div.content {
+    > ul {
+      padding-left: 0px;
+      list-style-type: none;
+      > li > a {
+        color: #602E02;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+/* The repository page has a special notice section and special heading indentation */
+body.repository {
+  h3 {
+    margin-left: 5px;
+  }
+  h4 {
+    margin-left: 10px;
+  }
+  h3,h4 {
+    float: left;
+    clear: both;
+    margin-bottom: 3px;
+  }
+  > div.main > div.content > div.notice {
+    display: inline-block;
+    margin-left: 20px;
+    border: 2px solid #00008b;
+    background: #ffffcc;
+    color: black;
+    a {
+      color: #602e02;
+    }
+    > h3 {
+      background: none;
+      display: block;
+      float: none;
+      text-align: center;
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    > p {
+      margin-bottom: 5px;
+    }
+    > p.more {
+      text-align: center;
+      > a {
+        font-size: 1.1em;
+        font-weight: bold;
+      }
+    }
+    > ol {
+      margin-bottom: 10px;
+      margin-left: 5px;
+    }
+  }
+}
+
+/* The repository_p2 page has content ul settings,
+   and a special intermission paragraph */
+body.repository_p2 {
+  > div.main > div.content {
+    > p.intermission {
+      color: sienna;
+      font-size: 1.1em;
+      font-weight: bold;
+      text-align: center;
+    }
+    > ul {
+      margin-left: 40px;
+    }
+  }
+}
+
+/* The trustees page has a special %dl for the photo directory */
+body.trustees {
+  > div.main > div.content > dl {
+    dt {
+      float: left;
+      clear: left;
+      margin-bottom: 10px;
+    }
+    dd {
+      float: left;
+      margin-left: 10px;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+  }
+}
+
+/* The data operators page has a special %ul for the contact list */
+body.data_operators {
+  > div.main > div.content {
+    > p {
+      clear: left;
+    }
+    > ul {
+      > li {
+        display: block;
+        width: auto;
+        clear: left;
+        vertical-align: bottom;
+        > span {
+          float: left;
+          vertical-align: bottom;
+          margin-left: 10px;
+        }
+        > span.name {
+          color: #822f2f;
+          font-size: 1.1em;
+          font-weight: bold;
+          &:after {
+            content: ', '
+          }
+        }
+        > span.email {
+          clear: left;
+          margin-left: 30px;
+          margin-bottom: 10px;
+          &:before {
+            content: 'Email: '
+          }
+        }
+        > span.country {
+          float: right;
+        }
+      }
+    }
+  }
+}
+
+/* The forms page has a special ul */
+body.forms {
+  > div.main > div.content > ul {
+    margin-left: 40px;
+    > li {
+      list-style-type: disc;
+      margin-bottom: 30px;
+      > a {
+        font-size: 1.1em;
+      }
+    }
+  }
+}
+
+/* The donations page has a special contact paragraph and a special notice */
+body.donations {
+  > div.main > div.content {
+    > p.contact {
+      font-size: 1.1em;
+      font-weight: bold;
+    }
+    > div.notice {
+      width: 50%;
+      border: 3px solid black;
+      background: #ffc;
+      color: black;
+      > h3 {
+        color: #602E02;
+        font-weight: bold;
+        background: none;
+      }
+    }
+  }
+}
+
+/* The studies page has a special detail ul */
+body.studies {
+  > div.main > div.content {
+    > ul > li > a {
+      font-weight: bold;
+    }
+    > ul.detail {
+      padding-left: 0px;
+      > li {
+        list-style-type: none;
+        margin-top: 10px;
+        &:first-child {
+          margin-top: 0px;
+        }
+        span {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+/* The articles page has a special dl */
+body.articles {
+  > div.main > div.content > dl {
+    > dt {
+      > span.author:before {
+        content: '('
+      }
+      > span.author:after {
+        content: ')'
+      }
+      > span.article_id {
+        margin-left: 15px;
+        font-size: 0.9em;
+      }
+    }
+    > dd {
+      margin-bottom: 10px;
+      margin-left: 0px;
+      font-size: 0.9em;
+    }
+  }
+}
+
+/* The links page has some special unordered lists */
+body.links {
+  > div.main > div.content {
+    > ul {
+      padding-left: 0px;
+      list-style-type: none;
+      > li {
+        font-size: 1.1em;
+        font-weight: bold;
+      }
+    }
+    > ul.links > li {
+      display: block;
+      margin-left: 0px;
+    }
+  }
+}

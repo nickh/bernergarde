@@ -1,0 +1,57 @@
+de:
+  site:
+    title: Berner-Garde Berner Sennenhund Database
+    header: Stewards des Open Berner Sennenhund Database
+    copyright: Copyright 2004-2010, Berner-Garde Foundation, Inc.
+  nav:
+    home: Startseite
+    faq: FAQ
+    repository: DNA/Tissue Repository
+    trustees: Stiftungsrat
+    operators: Data Betreibern
+    submit: Absenden von Daten
+    donations: Spenden
+    studies: Gesundheitsstudien
+    articles: Artikel
+    links: Links
+    database: Database
+  trustees:
+    president: Präsident
+    vice_president: Vizepräsident
+    secretary: Sekretär
+    treasurer: Schatzmeister
+    trustee: Treuhand
+    it_director: Treuhand-und IT-Leiter
+    file_manager: Treuhand-und Datei-Manager
+    repo_liaison: Treuhand-und Repository-Liaison
+    pub_director: 'Treuhand-und Öffentlichkeitsarbeit & Marketing Director'
+  operators:
+    heading: Berner-Garde Data Operatoren
+    overview: |
+      Unsere Daten-Operatoren sind Freiwillige, dass Ihre Daten und Eingaben erhalten
+      die Informationen in die Berner-Garde-Datenbank. Unter der Leitung
+      unserer Datei-Manager, sie arbeiten hart, um sicherzustellen, dass die eingegebenen Daten
+      genau und vollständig. Gesundheit und Informationen zur Zertifizierung wird überprüft
+      um die Integrität der Datenbank sicherzustellen. Sie können Ihre Hund oder Wurf
+      Daten über die Formulare auf dieser Website oder durch Kontaktaufnahme mit einem unserer
+      Die Betreiber direkt.
+    questions: |
+      Wenn Sie Fragen zu unseren Data-Operatoren oder möchte
+      Freiwillige zu einem selbst zu sein, kontaktieren Sie bitte den Berner-Garde Datei-Manager.
+  links:
+    heading: Links zu ihrer unterstützung
+    bmdca: Berner Sennenhund Club of America
+    akc: Der Berner Sennenhund Seite bei der AKC
+    ofa: Orthopedic Foundation for Animals (OFA)
+    cerf: Canine Eye Registry Foundation (CERF)
+    gdc: Institut für Genetische Disease Control
+    pennhip: University of Pennsylvania Hip Improvement Program (PennHIP)
+    podcasts: AKC Canine Health Foundation Podcasts
+    vetgen: Veterinary Genetics Dienstleistungen
+    camken: "Robin Camken's Health Information Links"
+    berner_org: Berner.Org Home Page
+    berner_info: "Pat Long's Berner Infoseite"
+    am: "Für Informationen über Aseptik Meningitis, kontaktieren sie bitte %{email}"
+    sas: "Für Informationen über Subaortenstenose (SAS), kontaktieren sie bitte %{email}"
+    tumors: "Für Informationen über Tumore, kontaktieren sie bitte %{email}"
+    berner_l: "Um mitglied der Berner-L Mailing-List, kontaktieren sie bitte %{email}"

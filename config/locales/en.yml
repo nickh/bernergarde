@@ -1,5 +1,57 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
-
 en:
-  hello: "Hello world"
+  site:
+    title: Berner-Garde Bernese Mountain Dog Database
+    header: Stewards of the Open Bernese Mountain Dog Database
+    copyright: Copyright 2004-2010, Berner-Garde Foundation, Inc.
+  nav:
+    home: Home
+    faq: FAQ
+    repository: DNA/Tissue Repository
+    trustees: Trustees
+    operators: Data Operators
+    submit: Submit Data
+    donations: Donations
+    studies: Health Studies
+    articles: Articles
+    links: Links
+    database: Database
+  trustees:
+    president: President
+    vice_president: Vice President
+    secretary: Secretary
+    treasurer: Treasurer
+    trustee: Trustee
+    it_director: Trustee and IT Director
+    file_manager: Trustee and File Manager
+    repo_liaison: Trustee and Repository Liaison
+    pub_director: 'Trustee and Publicity & Marketing Director'
+  operators:
+    heading: Berner-Garde Data Operators
+    overview: |
+      Our Data Operators are volunteers that receive your data submissions and
+      enter the information into the Berner-Garde Database. Under the guidance
+      of our File Manager, they work hard to insure that the data is entered
+      accurately and completely. Health and Certification information is verified
+      to insure the integrity of the database. You can submit your dog or litter
+      data via the forms available on this web site or by contacting one of our
+      Operators directly.
+    questions: |
+      If you have any questions regarding our Data Operators or would like to
+      volunteer to be one yourself, please contact the Berner-Garde File Manager.
+  links:
+    heading: Links you may find useful
+    bmdca: Bernese Mountain Dog Club of America
+    akc: The Bernese Mountain Dog Page at the AKC
+    ofa: Orthopedic Foundation for Animals (OFA)
+    cerf: Canine Eye Registry Foundation (CERF)
+    gdc: Institute for Genetic Disease Control
+    pennhip: University of Pennsylvania Hip Improvement Program (PennHIP)
+    podcasts: AKC Canine Health Foundation Podcasts
+    vetgen: Veterinary Genetics Services
+    camken: "Robin Camken's Health Information Links"
+    berner_org: Berner.Org Home Page
+    berner_info: "Pat Long's Berner Info Page"
+    am: "For information regarding Asceptic Meningitis, please contact %{email}"
+    sas: "For information regarding Subaortic Stenosis (SAS), please contact %{email}"
+    tumors: "For information regarding Tumors, please contact %{email}"
+    berner_l: "To join the Berner-L Mailing List, please contact %{email}"
