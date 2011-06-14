@@ -1,3 +1,9 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+/* Generic style definition for all pages in the bgf layout */
 body.bgf {
   /* Generic style definition for all pages */
   padding-right: 5px;
@@ -61,15 +67,18 @@ body.bgf {
         bottom: 0px;
         font-size: 1.3em;
         font-weight: bold; }
-      body.bgf > div.main > div.header > ul.lang {
+      body.bgf > div.main > div.header > div.lang {
         position: absolute;
         bottom: 0px;
-        right: 0px;
-        margin-right: 2px;
-        margin-bottom: 2px; }
-        body.bgf > div.main > div.header > ul.lang > li {
+        right: 0px; }
+        body.bgf > div.main > div.header > div.lang > ul {
           display: inline;
-          list-style-type: none; }
+          padding-left: 0;
+          margin-right: 2px;
+          margin-bottom: 2px; }
+          body.bgf > div.main > div.header > div.lang > ul > li {
+            display: inline;
+            list-style-type: none; }
     body.bgf > div.main > div.nav {
       position: absolute; }
       body.bgf > div.main > div.nav > ul {

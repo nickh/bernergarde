@@ -1,3 +1,10 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Generic style definition for all pages in the bgf layout */
 body.bgf {
   /* Generic style definition for all pages */
   padding-right: 5px;
@@ -77,15 +84,19 @@ body.bgf {
         font-size: 1.3em;
         font-weight: bold;
       }
-      > ul.lang {
+      > div.lang {
         position: absolute;
         bottom: 0px;
         right: 0px;
-        margin-right: 2px;
-        margin-bottom: 2px;
-        > li {
+        > ul {
           display: inline;
-          list-style-type: none;
+          padding-left: 0;
+          margin-right: 2px;
+          margin-bottom: 2px;
+          > li {
+            display: inline;
+            list-style-type: none;
+          }
         }
       }
     }
