@@ -1,4 +1,6 @@
 class Dog < ActiveRecord::Base
+  include AnyMatcher
+
   belongs_to :owner, :class_name => 'Person'
   belongs_to :litter
   has_many :litters,
@@ -7,6 +9,8 @@ class Dog < ActiveRecord::Base
   has_many :completed_titles
   has_many :completed_certifications
   has_many :diagnoses
+
+  delegate :breeder, :whelp_date, :to => :litter
 
   def male?
     !self.female?

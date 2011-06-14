@@ -58,4 +58,23 @@ describe Dog do
       litter.dam.should == bitch
     end
   end
+
+  describe 'delegations to litter' do
+    before(:all) do
+      @litter = Factory.build(:litter)
+      @dog    = Factory.build(:dog, :litter => @litter)
+    end
+
+    it 'delegates breeder' do
+      @dog.breeder.should == @litter.breeder
+    end
+
+    it 'delegates whelp_date' do
+      @dog.whelp_date.should == @litter.whelp_date
+    end
+  end
+
+  it 'matches any' do
+    Dog.should respond_to :matching_any
+  end
 end

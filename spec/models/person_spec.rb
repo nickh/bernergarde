@@ -35,4 +35,8 @@ describe Person do
   it 'has many clubs' do
     subject.should have_many :clubs, :through => :club_memberships
   end
+
+  it 'matches any' do
+    Person.should respond_to :matching_any
+  end
 end
