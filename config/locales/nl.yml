@@ -1,4 +1,12 @@
 nl:
+  yes: Ja
+  no: Nee
+  date:
+    formats:
+      db_people: "%-m/%-d/%Y"
+  time:
+    formats:
+      db: "%-m/%-d/%Y %-I:%M:%S%p"
   site:
     title: Berner-Garde Berner Sennenhond Database
     header: Stewards van de Open Berner Sennenhond Database
@@ -17,6 +25,89 @@ nl:
     database: Database
   lang:
     select: 'Selecteer een taal (%{current}):'
+  db:
+    country:
+      us: 'Verenigde Staten van Amerika'
+    site:
+      header: Berner-Garde Database Access
+    welcome:
+      heading: Welkom bij de Berner-Garde Database
+      access: U moet ingelogd zijn om informatie uit de database te wijzigen.
+      help: Klik op de links aan de linkerkant naar de database records of rapporten uitvoeren toegang.
+    nav:
+      welcome: Welkom
+      people: Mensen
+      litters: Nesten
+      dogs: Honden
+      vets: Vets
+      reports: Verslagen
+      photos: "Foto's"
+      submit: Indien Gegevens
+    search:
+      params_required: 'U moet zoeken parameters voor %{resource}'
+      begins_with: Begint Met
+      contains: Bevat
+      and: En
+      people:
+        header: Mensen Zoeken
+        instructions: Voer een willekeurige combinatie van de vier zoekopties hieronder opgesomd.
+        help: Klik hier om te bekijken op zoek tips en instructies.
+        bgid_prompt: 'Als u weet dat de exacte Berner-Garde People ID-nummer, kunt u hier invullen:'
+        invalid_bgid: 'Niet in staat tot persoon met Berner-Garde ID %{bgid} te vinden'
+        last_name: Achternaam
+        first_name: Voornaam
+        state: Staat / Provincie
+        state_prompt: Kies een staat of provincie
+        country: Land
+        country_prompt: Kies een land
+        bgid: BG People ID
+        submit: Zoekformulier
+        resource: mensen
+    people:
+      header: Mensen Detail Info
+      name: 'Naam:'
+      bg_id: 'Mensen ID:'
+      second_name: 'Tweede Naam:'
+      country: 'Land:'
+      address: 'Adres:'
+      address2: 'Adres 2:'
+      city_state_zip: 'Stad/Staat/Postcode:'
+      phone: 'Telefoon:'
+      email: 'E-mail:'
+      web_site: 'Website:'
+      fax: 'Fax:'
+      kennel_name: 'Kennel Naam:'
+      deceased: 'Overledene:'
+      bmdca_status: 'BMDCA Status:'
+      display:
+        label: 'Tonen:'
+        all: 'Getoond alle gegevens:'
+        none: 'Hide adres, telefoonnummer en e-mail'
+      master_household: 'Master huishoudelijke record:'
+      data_source: 'Gegevensbron:'
+      last_updated: 'Laatst Bijgewerkt:'
+      subsection:
+        header: Extra Mensen Gedetaileerde Informatie
+      nav:
+        dogs_owned: Honden Owned
+        litters_bred: Nesten Bred
+        clubs: Clubs
+        household: Huishouden
+      dogs_owned:
+        bg_id: ID
+        registered_name: Geregistreerd Naam
+        call_name: Roepnaam
+        sex: Seks
+        registration: Registratie
+        whelp_date: Welp Datum
+        reside: Wonen
+        deceased: Overledene
+      litters_bred:
+        litter_id: ID
+        whelp_date: Welp Datum
+        dam_name: Dam Naam
+      clubs:
+        name: Naam
   trustees:
     president: Voorzitter
     vice_president: Vice-voorzitter

@@ -1,0 +1,44 @@
+%h2= t('db.search.people.header')
+
+%p.instructions= t('db.search.people.instructions')
+
+%p.help
+  %a{:href => '#'}
+    %span= t('db.search.people.help')
+
+.search_form
+  =form_tag(search_people_path(I18n.locale)) do
+    %fieldset
+      =label_tag('person[last_name]', t('db.search.people.last_name'))
+      =text_field_tag('person[last_name]')
+      =radio_button_tag('person[last_name_match]', 'begins', true)
+      %span= t('db.search.begins_with')
+      =radio_button_tag('person[last_name_match]', 'begins', false)
+      %span= t('db.search.contains')
+
+      %p= t('db.search.and')
+
+      =label_tag('person[first_name]', t('db.search.people.first_name'))
+      =text_field_tag('person[first_name]')
+      =radio_button_tag('person[first_name_match]', 'begins', true)
+      %span= t('db.search.begins_with')
+      =radio_button_tag('person[first_name_match]', 'begins', false)
+      %span= t('db.search.contains')
+
+      %p= t('db.search.and')
+
+      =label_tag('person[state]', t('db.search.people.state'))
+      =select_tag('person[state]', options_for_select(state_options))
+
+      %p= t('db.search.and')
+
+      =label_tag('person[country]', t('db.search.people.country'))
+      =select_tag('person[country]', options_for_select(country_options))
+
+    %p= t('db.search.people.bgid_prompt')
+
+    %fieldset
+      =label_tag('bg_id', t('db.search.people.bgid'))
+      =text_field_tag('bg_id')
+
+    =submit_tag t('db.search.people.submit')

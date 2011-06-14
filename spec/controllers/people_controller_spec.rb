@@ -15,29 +15,43 @@ describe PeopleController do
   end
 
   describe '#index' do
-    context 'without search params' do
-      it 'displays the search form' do
-        get :index
-        response.should be_success
-        response.should render_template 'search_form'
+    it 'displays the index page' do
+      get :index, :locale => I18n.locale
+      response.should be_success
+      response.should render_template 'index'
+    end
+  end
+
+  describe '#search' do
+    context 'with no search params' do
+      it 'redirects to the index page' do
+        post :search, :locale => I18n.locale
+        response.should redirect_to people_path
       end
     end
 
     context 'with a valid BG People ID' do
       it 'redirects to the person page' do
         valid_person = @berner_people.first
-        get :index, :bg_id => valid_person.id
+        post :search, :locale => I18n.locale, :bg_id => valid_person.id
         response.should redirect_to valid_person
       end
     end
 
     context 'with an invalid BG People ID' do
-      it 'displays the search form' do
-        missing_person = Factory(:person)
-        missing_person.destroy
-        get :index, :bg_id => missing_person.id
-        response.should be_success
-        response.should render_template 'search_form'
+      before(:all) do
+        @missing_person = Factory(:person)
+        @missing_person.destroy
+      end
+
+      it 'redirects to the index page' do
+        post :search, :locale => I18n.locale, :bg_id => @missing_person.id
+        response.should redirect_to people_path
+      end
+
+      it 'sets a flash error' do
+        post :search, :locale => I18n.locale, :bg_id => @missing_person.id
+        flash[:error].should_not be_nil
       end
     end
 
@@ -49,7 +63,7 @@ describe PeopleController do
         end
 
         it 'redirects to the matching person page' do
-          get :index, :person => {:first_name => 'foo'}
+          post :search, :locale => I18n.locale, :person => {:first_name => 'foo'}
           response.should redirect_to @result
         end
       end
@@ -60,9 +74,9 @@ describe PeopleController do
         end
 
         it 'displays the search results' do
-          get :index, :person => {:first_name => 'foo'}
+          post :search, :locale => I18n.locale, :person => {:first_name => 'foo'}
           response.should be_success
-          response.should render_template 'search_results'
+          response.should render_template 'search'
         end
       end
     end
@@ -73,7 +87,7 @@ describe PeopleController do
       it 'redirects to the index page' do
         missing_person = Factory(:person)
         missing_person.destroy
-        get :show, :id => missing_person.id
+        get :show, :locale => I18n.locale, :id => missing_person.id
         response.should redirect_to people_path
       end
     end
@@ -81,13 +95,13 @@ describe PeopleController do
     context 'with a valid person id' do
       it 'loads the specified person' do
         valid_person = @berner_people.first
-        get :show, :id => valid_person.id
+        get :show, :locale => I18n.locale, :id => valid_person.id
         assigns[:person].should == valid_person
       end
 
       it 'displays the person info' do
         valid_person = @berner_people.first
-        get :show, :id => valid_person.id
+        get :show, :locale => I18n.locale, :id => valid_person.id
         response.should render_template 'show'
       end
     end

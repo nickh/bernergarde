@@ -114,6 +114,175 @@ body.bgf {
       body.bgf > div.main > div.footer span {
         display: block; }
 
+/* Generic style definition for all pages in the db layout */
+body.db > div.page {
+  display: block;
+  height: 100%;
+  position: relative; }
+  body.db > div.page > div.nav {
+    background: #930;
+    width: 88px;
+    position: absolute;
+    height: 100%; }
+    body.db > div.page > div.nav > ul {
+      padding-top: 74px;
+      padding-left: 0px;
+      background: url("/images/BG_logo_76.jpg") no-repeat 50% 0px;
+      list-style-type: none;
+      margin: 3px; }
+      body.db > div.page > div.nav > ul > li {
+        margin-top: 2px;
+        margin-bottom: 2px;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        padding-top: 2px;
+        padding-bottom: 4px;
+        font-size: 0.9em;
+        font-weight: bold;
+        line-height: 1.0em;
+        text-align: center; }
+        body.db > div.page > div.nav > ul > li > a {
+          width: 100%;
+          color: #FFF68F;
+          text-decoration: none; }
+        body.db > div.page > div.nav > ul > li:hover {
+          background: #A74E3C;
+          border: 1px solid #FFEC8B; }
+          body.db > div.page > div.nav > ul > li:hover > a {
+            color: white; }
+  body.db > div.page > div.main {
+    border-left: 86px solid #930; }
+    body.db > div.page > div.main > div.header {
+      background: #930;
+      background: -webkit-gradient(linear, left center, right center, from(#993300), to(white), color-stop(0.4, #993300), color-stop(0.85, white));
+      background: -moz-linear-gradient(left, #993300, #993300 40%, white 85%);
+      padding: 4px 0px;
+      position: relative; }
+      body.db > div.page > div.main > div.header > h1 {
+        display: inline;
+        color: #ffffd1;
+        font-size: 2.1em;
+        font-weight: bold;
+        margin-left: 20px;
+        padding: 8px 0px;
+        text-shadow: 3px 3px 3px #4A1900; }
+      body.db > div.page > div.main > div.header > div.lang {
+        position: absolute;
+        bottom: 2px;
+        right: 0px; }
+        body.db > div.page > div.main > div.header > div.lang > ul {
+          display: inline;
+          padding-left: 0; }
+          body.db > div.page > div.main > div.header > div.lang > ul > li {
+            display: inline;
+            list-style-type: none; }
+    body.db > div.page > div.main > div.content {
+      margin-left: 10px; }
+      body.db > div.page > div.main > div.content h2 {
+        margin: 5px 0px;
+        padding: 0px 0px 0px 5px;
+        font-size: 1.2em;
+        font-weight: bold;
+        width: 20em;
+        background: #CFC;
+        border: 2px solid gray; }
+      body.db > div.page > div.main > div.content h3 {
+        font-size: 1.0em;
+        font-weight: bold;
+        text-decoration: underline;
+        margin: 5px 0 8px 0; }
+      body.db > div.page > div.main > div.content > p {
+        margin: 1px 0px; }
+        body.db > div.page > div.main > div.content > p.instructions {
+          font-weight: bold; }
+        body.db > div.page > div.main > div.content > p.help > a {
+          color: #00E;
+          font-weight: bold; }
+          body.db > div.page > div.main > div.content > p.help > a > span {
+            color: #903; }
+      body.db > div.page > div.main > div.content > div.search_form {
+        margin-top: 10px; }
+        body.db > div.page > div.main > div.content > div.search_form > form > fieldset {
+          margin-left: 40px;
+          border: 0;
+          padding: 0; }
+          body.db > div.page > div.main > div.content > div.search_form > form > fieldset > label {
+            width: 7em;
+            text-align: right;
+            margin-right: 10px;
+            display: inline-block; }
+            body.db > div.page > div.main > div.content > div.search_form > form > fieldset > label:after {
+              content: ':'; }
+          body.db > div.page > div.main > div.content > div.search_form > form > fieldset > input[type="text"] + input[type="radio"] {
+            margin-left: 40px; }
+          body.db > div.page > div.main > div.content > div.search_form > form > fieldset > p {
+            margin: 0px 0px 0px 15px; }
+        body.db > div.page > div.main > div.content > div.search_form > form > input[type="submit"] {
+          margin-left: 130px; }
+      body.db > div.page > div.main > div.content > dl.overview {
+        border: 1px solid silver;
+        background: cornsilk;
+        margin: 0; }
+        body.db > div.page > div.main > div.content > dl.overview > dt, body.db > div.page > div.main > div.content > dl.overview dd {
+          display: inline-block;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          border-bottom: 1px solid silver;
+          margin: 0;
+          vertical-align: text-bottom; }
+        body.db > div.page > div.main > div.content > dl.overview > dt {
+          text-align: right;
+          font-weight: bold; }
+          body.db > div.page > div.main > div.content > dl.overview > dt.name + dd, body.db > div.page > div.main > div.content > dl.overview > dt.bg_id + dd {
+            font-weight: bold;
+            color: #990000; }
+          body.db > div.page > div.main > div.content > dl.overview > dt.last_updated {
+            border-bottom: none; }
+            body.db > div.page > div.main > div.content > dl.overview > dt.last_updated + dd {
+              border-bottom: none; }
+        body.db > div.page > div.main > div.content > dl.overview > dd {
+          padding-left: 5px; }
+      body.db > div.page > div.main > div.content > ul.nav {
+        clear: both;
+        padding: 0;
+        margin-bottom: 10px; }
+        body.db > div.page > div.main > div.content > ul.nav > li {
+          display: inline-block;
+          width: 105px;
+          border: 1px solid #036;
+          border-left: none;
+          text-align: center;
+          background: #ccc; }
+          body.db > div.page > div.main > div.content > ul.nav > li:first-child {
+            border-left: 1px solid #036; }
+          body.db > div.page > div.main > div.content > ul.nav > li > a {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #006;
+            text-decoration: none; }
+          body.db > div.page > div.main > div.content > ul.nav > li.active {
+            background: #036; }
+            body.db > div.page > div.main > div.content > ul.nav > li.active > a {
+              color: white; }
+      body.db > div.page > div.main > div.content > .subsection {
+        display: none; }
+        body.db > div.page > div.main > div.content > .subsection > table {
+          width: auto;
+          border-collapse: collapse; }
+          body.db > div.page > div.main > div.content > .subsection > table tr {
+            font-size: 0.9em;
+            font-weight: bold; }
+            body.db > div.page > div.main > div.content > .subsection > table tr > th, body.db > div.page > div.main > div.content > .subsection > table tr td {
+              padding: 1px 2px;
+              border: 1px solid #808080; }
+            body.db > div.page > div.main > div.content > .subsection > table tr > th {
+              color: white;
+              background: #936; }
+            body.db > div.page > div.main > div.content > .subsection > table tr > td {
+              color: black;
+              background: white; }
+
 /* Per-page styles */
 /* The FAQ page has special ULs */
 body.faq > div.main > div.content > ul {
@@ -266,3 +435,104 @@ body.links > div.main > div.content > ul {
 body.links > div.main > div.content > ul.links > li {
   display: block;
   margin-left: 0px; }
+
+body.db.people > div.page > div.main > div.content > dl.overview {
+  width: 740px; }
+  body.db.people > div.page > div.main > div.content > dl.overview > dt {
+    width: 100px; }
+    body.db.people > div.page > div.main > div.content > dl.overview > dt.master_household {
+      width: 160px; }
+      body.db.people > div.page > div.main > div.content > dl.overview > dt.master_household + dd {
+        width: 205px; }
+    body.db.people > div.page > div.main > div.content > dl.overview > dt.address + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.address2 + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.data_source + dd {
+      width: 265px; }
+    body.db.people > div.page > div.main > div.content > dl.overview > dt.city_state_zip {
+      color: cornsilk; }
+    body.db.people > div.page > div.main > div.content > dl.overview > dt.email + dd {
+      width: 635px; }
+    body.db.people > div.page > div.main > div.content > dl.overview > dt.bg_id + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.country + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.phone + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.fax + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.deceased + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.display + dd {
+      width: 185px; }
+  body.db.people > div.page > div.main > div.content > dl.overview > dd {
+    width: 345px; }
+
+body.db.dogs > div.page > div.main > div.content > h2 {
+  background: #cae1ff; }
+body.db.dogs > div.page > div.main > div.content > div.search_form > form > fieldset {
+  margin: 2px 0; }
+  body.db.dogs > div.page > div.main > div.content > div.search_form > form > fieldset > label {
+    font-weight: normal;
+    width: 140px;
+    margin-right: 0; }
+  body.db.dogs > div.page > div.main > div.content > div.search_form > form > fieldset > span {
+    display: inline-block; }
+    body.db.dogs > div.page > div.main > div.content > div.search_form > form > fieldset > span:last-child {
+      width: auto; }
+  body.db.dogs > div.page > div.main > div.content > div.search_form > form > fieldset > input[type="text"] + input[type="radio"] {
+    margin-left: 10px; }
+  body.db.dogs > div.page > div.main > div.content > div.search_form > form > fieldset > input[type="text"] + span {
+    margin-left: 10px; }
+    body.db.dogs > div.page > div.main > div.content > div.search_form > form > fieldset > input[type="text"] + span:before {
+      content: '('; }
+    body.db.dogs > div.page > div.main > div.content > div.search_form > form > fieldset > input[type="text"] + span:after {
+      content: ')'; }
+  body.db.dogs > div.page > div.main > div.content > div.search_form > form > fieldset + p {
+    margin: 10px 0; }
+body.db.dogs > div.page > div.main > div.content > div.search_form > form > input[type="submit"] {
+  margin-left: 140px;
+  margin-top: 10px; }
+body.db.dogs > div.page > div.main > div.content > dl {
+  width: 770px; }
+  body.db.dogs > div.page > div.main > div.content > dl > dt {
+    width: 120px; }
+    body.db.dogs > div.page > div.main > div.content > dl > dt:nth-child(3), body.db.dogs > div.page > div.main > div.content > dl > dt:nth-child(7) {
+      width: 100px; }
+    body.db.dogs > div.page > div.main > div.content > dl > dt:nth-child(21), body.db.dogs > div.page > div.main > div.content > dl > dt:nth-child(27), body.db.dogs > div.page > div.main > div.content > dl > dt:nth-child(33) {
+      width: 110px; }
+  body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(2), body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(6) {
+    width: 405px; }
+  body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(4), body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(8) {
+    width: 135px; }
+  body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(10), body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(14), body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(18), body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(24), body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(30) {
+    width: 180px; }
+  body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(12), body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(16) {
+    width: 340px; }
+  body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(20), body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(26), body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(32) {
+    width: 90px; }
+  body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(22), body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(28), body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(34) {
+    width: 135px; }
+body.db.dogs > div.page > div.main > div.content > ul.nav li {
+  display: inline;
+  background: #dedede;
+  border: 2px solid black;
+  border-left: none; }
+  body.db.dogs > div.page > div.main > div.content > ul.nav li:first-child {
+    border-left: 2px solid black; }
+  body.db.dogs > div.page > div.main > div.content > ul.nav li > a {
+    padding: 2px 10px;
+    font-size: 1.0em;
+    font-weight: bold;
+    color: black; }
+  body.db.dogs > div.page > div.main > div.content > ul.nav li.active {
+    background: #00688b; }
+    body.db.dogs > div.page > div.main > div.content > ul.nav li.active > a {
+      color: white; }
+body.db.dogs > div.page > div.main > div.content > .subsection > table.owner tr > th {
+  background: #652828; }
+body.db.dogs > div.page > div.main > div.content > .subsection > table.owner tr > td.bgid, body.db.dogs > div.page > div.main > div.content > .subsection > table.owner tr td.reside {
+  text-align: center; }
+body.db.dogs > div.page > div.main > div.content > .subsection > table.litter {
+  border: 1px solid black; }
+  body.db.dogs > div.page > div.main > div.content > .subsection > table.litter tr > th, body.db.dogs > div.page > div.main > div.content > .subsection > table.litter tr td {
+    border: none; }
+  body.db.dogs > div.page > div.main > div.content > .subsection > table.litter tr > th {
+    background: #00688B; }
+  body.db.dogs > div.page > div.main > div.content > .subsection > table.litter tr > td {
+    font-weight: bold; }
+    body.db.dogs > div.page > div.main > div.content > .subsection > table.litter tr > td.bgid {
+      text-align: center; }
+    body.db.dogs > div.page > div.main > div.content > .subsection > table.litter tr > td:first-child {
+      text-align: right; }
+  body.db.dogs > div.page > div.main > div.content > .subsection > table.litter tr.sire > td {
+    background: #C6E2FF; }
+  body.db.dogs > div.page > div.main > div.content > .subsection > table.litter tr.dam > td {
+    background: #EEE0E5; }

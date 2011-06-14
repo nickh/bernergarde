@@ -1,4 +1,12 @@
 de:
+  yes: Ja
+  no: Nein
+  date:
+    formats:
+      db_people: "%-m/%-d/%Y"
+  time:
+    formats:
+      db: "%-m/%-d/%Y %-I:%M:%S%p"
   site:
     title: Berner-Garde Berner Sennenhund Database
     header: Stewards des Open Berner Sennenhund Database
@@ -17,6 +25,89 @@ de:
     database: Database
   lang:
     select: 'Wählen sie eine sprache (%{current}):'
+  db:
+    country:
+      us: 'Vereinigte Staaten von Amerika'
+    site:
+      header: Berner-Garde Database Access
+    welcome:
+      heading: Willkommen in der Berner-Garde-Datenbank
+      access: Du musst angemeldet sein, um datenbankinformationen ändern.
+      help: Klicken sie auf die Links auf der linken auf datensätze oder laufen berichte zuzugreifen.
+    nav:
+      welcome: Willkommen
+      people: Menschen
+      litters: Würfe
+      dogs: Hunde
+      vets: Tierärzte
+      reports: Berichte
+      photos: Fotos
+      submit: Daten Senden
+    search:
+      params_required: 'Sie müssen suchparameter für %{resource} eingeben'
+      begins_with: Beginnt mit
+      contains: Enthält
+      and: Und
+      people:
+        header: Suche Leute
+        instructions: Geben sie eine beliebige kombination der vier suchoptionen unten aufgeführt.
+        help: Klicken sie hier, um benutzer anweisungen und tipps.
+        bgid_prompt: 'Wenn sie die genaue Berner-Garde Personen-ID-Nummer kennen, können sie es hier eingeben:'
+        invalid_bgid: 'Kann Person Berner-Garde-ID %{bgid} finden'
+        last_name: Nachname
+        first_name: Vorname
+        state: Staat / Provinz
+        state_prompt: Wählen sie einen staat oder provinz
+        country: Land
+        country_prompt: Wählen sie ein land
+        bgid: BG Personen-ID
+        submit: Suchformular
+        resource: menschen
+    people:
+      header: Menschen Detailinfo
+      name: 'Name:'
+      bg_id: 'Menschen ID:'
+      second_name: 'Zweiter Name:'
+      country: 'Land:'
+      address: 'Adresse:'
+      address2: 'Adresse 2:'
+      city_state_zip: 'City/Staat/Postleitzahl:'
+      phone: 'Telefon:'
+      email: 'E-Mail:'
+      web_site: 'Web site:'
+      fax: 'Fax:'
+      kennel_name: 'Kennel Name:'
+      deceased: 'Verstorbene:'
+      bmdca_status: 'BMDCA Status:'
+      display:
+        label: 'Anzeige:'
+        all: 'Alle angezeigten daten'
+        none: 'Hide adresse, telefonnummer und e-mail'
+      master_household: 'Master Haushalts-Rekord:'
+      data_source: 'Quelle der Daten:'
+      last_updated: 'Zuletzt Aktualisiert Am:'
+      subsection:
+        header: Zusätzliche Menschen Detail Information
+      nav:
+        dogs_owned: Hunde Owned
+        litters_bred: Würfe Bred
+        clubs: Kreuz
+        household: Haushalt
+      dogs_owned:
+        bg_id: ID
+        registered_name: Registered Name
+        call_name: Call Name
+        sex: Geschlecht
+        registration: Anmeldung
+        whelp_date: Welpe Date
+        reside: Wohnen
+        deceased: Verstorbene
+      litters_bred:
+        litter_id: ID
+        whelp_date: Welpe Date
+        dam_name: Dam Name
+      clubs:
+        name: Name
   trustees:
     president: Präsident
     vice_president: Vizepräsident

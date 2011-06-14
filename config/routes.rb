@@ -15,7 +15,12 @@ Bernergarde::Application.routes.draw do
     :as  => 'page',
     :via => 'get'
 
+  match "/:locale/db", :to => 'database#index', :as => 'database', :format => 'html', :via => 'get'
   scope "/:locale/db" do
-    resources :people
+    resources :people, :litters, :dogs, :vets, :reports, :photos do
+      collection do
+        post :search
+      end
+    end
   end
 end

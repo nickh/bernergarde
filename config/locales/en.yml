@@ -1,4 +1,12 @@
 en:
+  yes: Yes
+  no: No
+  date:
+    formats:
+      db_people: "%-m/%-d/%Y"
+  time:
+    formats:
+      db: "%-m/%-d/%Y %-I:%M:%S%p"
   site:
     title: Berner-Garde Bernese Mountain Dog Database
     header: Stewards of the Open Bernese Mountain Dog Database
@@ -17,6 +25,89 @@ en:
     database: Database
   lang:
     select: 'Select a language (%{current}):'
+  db:
+    country:
+      us: 'United States of America'
+    site:
+      header: Berner-Garde Database Access
+    welcome:
+      heading: Welcome to the Berner-Garde Database
+      access: You must log in to modify database information.
+      help: Click on the links to the left to access database records or run reports.
+    nav:
+      welcome: Welcome
+      people: People
+      litters: Litters
+      dogs: Dogs
+      vets: Vets
+      reports: Reports
+      photos: Photos
+      submit: Submit Data
+    search:
+      params_required: 'You must enter search parameters for %{resource}'
+      begins_with: Begins With
+      contains: Contains
+      and: And
+      people:
+        header: People Search
+        instructions: Enter any combination of the four search options listed below.
+        help: Click here to view searching instructions and tips.
+        bgid_prompt: 'If you know the exact Berner-Garde People ID Number, you can enter it here:'
+        invalid_bgid: 'Unable to find person with Berner-Garde ID %{bgid}'
+        last_name: Last Name
+        first_name: First Name
+        state: State / Prov
+        state_prompt: Select a state or province
+        country: Country
+        country_prompt: Select a country
+        bgid: BG People ID
+        submit: Submit Search
+        resource: people
+    people:
+      header: People Detail Info
+      name: 'Name:'
+      bg_id: 'People ID:'
+      second_name: 'Second Name:'
+      country: 'Country:'
+      address: 'Address:'
+      address2: 'Address 2:'
+      city_state_zip: 'City/State/ZIP:'
+      phone: 'Phone:'
+      email: 'Email:'
+      web_site: 'Web Site:'
+      fax: 'Fax:'
+      kennel_name: 'Kennel Name:'
+      deceased: 'Deceased:'
+      bmdca_status: 'BMDCA Status:'
+      display:
+        label: 'Display:'
+        all: 'All data displayed'
+        none: 'Hide address, phone and email'
+      master_household: 'Master Household Record:'
+      data_source: 'Data Source:'
+      last_updated: 'Last Updated:'
+      subsection:
+        header: Additional People Detail Information
+      nav:
+        dogs_owned: Dogs Owned
+        litters_bred: Litters Bred
+        clubs: Clubs
+        household: Household
+      dogs_owned:
+        bg_id: ID
+        registered_name: Registered Name
+        call_name: Call Name
+        sex: Sex
+        registration: Registration
+        whelp_date: Whelp Date
+        reside: Reside
+        deceased: Deceased
+      litters_bred:
+        litter_id: ID
+        whelp_date: Whelp Date
+        dam_name: Dam Name
+      clubs:
+        name: Name
   trustees:
     president: President
     vice_president: Vice President

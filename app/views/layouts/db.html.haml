@@ -1,0 +1,29 @@
+!!!
+
+%html{:xmlns => "http://www.w3.org/1999/xhtml"}
+
+  %head
+    %title= t('site.title')
+    =csrf_meta_tag
+    =stylesheet_link_tag    'application'
+    =stylesheet_link_tag    'blueprint/screen', :media => 'screen'
+    =stylesheet_link_tag    'blueprint/print',  :media => 'print'
+
+    -if Rails.env.development?
+      =javascript_include_tag 'jquery-1.6.1.js'
+    -else
+      =javascript_include_tag 'jquery-1.6.1.min.js'
+    =javascript_include_tag 'application'
+    =yield :javascript
+
+  %body{:class => ['db', db_page_class]}
+    .page.span-24.last
+      .nav
+        =render :partial => 'database/nav'
+      .main
+        .header
+          %h1= t('db.site.header')
+          - if request.method == 'GET'
+            .lang= render :partial => 'shared/lang'
+        .content
+          =yield

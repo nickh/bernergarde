@@ -1,1 +1,100 @@
-%h1 I'ma show you a person!
+- content_for :javascript do
+  =javascript_include_tag 'db_subsection_show'
+
+%h2= t('db.people.header')
+
+%dl.overview<
+  %dt.name>=             t('db.people.name')
+  %dd>=                  @person.full_name.upcase
+  %dt.bg_id>=            t('db.people.bg_id')
+  %dd>=                  @person.id
+  %dt.second_name>=      t('db.people.second_name')
+  %dd>
+  %dt.country>=          t('db.people.country')
+  %dd>=                  t("db.country.#{@person.country.downcase}")
+  %dt.address>=          t('db.people.address')
+  %dd>=                  @person.address.to_s.upcase
+  %dt.address2>=         t('db.people.address2')
+  %dd>=                  @person.address2.to_s.upcase
+  %dt.city_state_zip>=   t('db.people.city_state_zip')
+  %dd>=                  "#{@person.city.upcase}, #{@person.state.upcase} #{@person.zip.upcase}"
+  %dt.phone>=            t('db.people.phone')
+  %dd>=                  @person.phone
+  %dt.email>=            t('db.people.email')
+  %dd>=                  @person.email
+  %dt.web_site>=         t('db.people.web_site')
+  %dd>=                  @person.web_site
+  %dt.fax>=              t('db.people.fax')
+  %dd>=                  @person.fax
+  %dt.kennel_name>=      t('db.people.kennel_name')
+  %dd>=                  @person.kennel_name
+  %dt.deceased>=         t('db.people.deceased')
+  %dd>=                  @person.deceased
+  %dt.bmdca_status>=     t('db.people.bmdca_status')
+  %dd>=                  bmdca_membership_status(@person)
+  %dt.display>=          t('db.people.display.label')
+  %dd>=                  @person.display_contact_info?? t('db.people.display.all') : t('db.people.display.none')
+  %dt.master_household>= t('db.people.master_household')
+  %dd>=                  @person.master_household?? t('yes') : t('no')
+  %dt.data_source>=      t('db.people.data_source')
+  %dd>=                  @person.data_source
+  %dt.last_updated>=     t('db.people.last_updated')
+  %dd>=                  l(@person.updated_at, :format => :db)
+
+%h3= t('db.people.subsection.header')
+
+%ul.nav
+  %li{:class => 'subsection_nav'}>= link_to t('db.people.nav.dogs_owned'),   '#dogs_owned'
+  %li{:class => 'subsection_nav'}>= link_to t('db.people.nav.litters_bred'), '#litters_bred'
+  %li{:class => 'subsection_nav'}>= link_to t('db.people.nav.clubs'),        '#clubs'
+  %li{:class => 'subsection_nav'}>= link_to t('db.people.nav.household'),    '#household'
+
+%a{:name => 'dogs_owned'}
+#dogs_owned.subsection
+  %table
+    %tr
+      %th= t('db.people.dogs_owned.bg_id')
+      %th= t('db.people.dogs_owned.registered_name')
+      %th= t('db.people.dogs_owned.call_name')
+      %th= t('db.people.dogs_owned.sex')
+      %th= t('db.people.dogs_owned.registration')
+      %th= t('db.people.dogs_owned.whelp_date')
+      %th= t('db.people.dogs_owned.reside')
+      %th= t('db.people.dogs_owned.deceased')
+    - @person.dogs.each do |dog|
+      %tr
+        %td= link_to dog.id, dog
+        %td= dog.registered_name.upcase
+        %td= dog.call_name.upcase
+        %td= dog.female?? 'F' : 'M'
+        %td= dog.registration
+        %td= l(dog.whelp_date, :format => :db_people) if dog.litter
+        %td YES
+        %td= dog.deceased_at
+
+%a{:name => 'litters_bred'}
+#litters_bred.subsection
+  %table
+    %tr
+      %th= t('db.people.litters_bred.litter_id')
+      %th= t('db.people.litters_bred.whelp_date')
+      %th= t('db.people.litters_bred.dam_name')
+    - @person.litters.each do |litter|
+      %td= litter.id
+      %td= l(litter.whelp_date)
+      %td= litter.dam.registered_name
+
+%a{:name => 'clubs'}
+#clubs.subsection
+  %dl
+    %dt BMDCA Member Status
+    %dd= @person.bmdca_status
+  %table
+    %tr
+      %th= t('db.people.clubs.name')
+    - @person.clubs.each do |club|
+      %td= club.name
+
+%a{:name => 'household'}
+#household.subsection
+  %h3 This is a household subsection
