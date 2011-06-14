@@ -31,4 +31,20 @@ describe ApplicationHelper do
       end
     end
   end
+
+  describe '.state_options' do
+    it 'is an array of arrays' do
+      states = helper.state_options
+      states.should be_an Array
+      states.detect{|opt| !opt.is_a? Array}.should be_nil
+    end
+  end
+
+  describe '.country_options' do
+    it 'is an array of arrays' do
+      countries = helper.country_options
+      countries.should be_an Array
+      countries.detect{|opt| !opt.is_a? Array}.should be_nil
+    end
+  end
 end
