@@ -14,7 +14,7 @@
       .header
         %h1= t('site.header')
         - if request.method == 'GET'
-          =render :partial => 'shared/lang'
+          .lang= render :partial => 'shared/lang'
       .nav
         =render :partial => 'shared/nav'
       .content

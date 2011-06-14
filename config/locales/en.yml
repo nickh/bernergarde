@@ -15,6 +15,8 @@ en:
     articles: Articles
     links: Links
     database: Database
+  lang:
+    select: 'Select a language (%{current}):'
   trustees:
     president: President
     vice_president: Vice President

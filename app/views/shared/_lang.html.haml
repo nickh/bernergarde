@@ -1,3 +1,4 @@
-%ul.lang
+%span= t('lang.select', :current => I18n.locale)
+%ul
   - language_options.each do |lang|
     %li= link_to(lang, :locale => lang)

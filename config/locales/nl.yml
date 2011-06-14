@@ -15,6 +15,8 @@ nl:
     articles: Artikelen
     links: Links
     database: Database
+  lang:
+    select: 'Selecteer een taal (%{current}):'
   trustees:
     president: Voorzitter
     vice_president: Vice-voorzitter
