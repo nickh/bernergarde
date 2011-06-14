@@ -15,13 +15,20 @@ def make_breeders
       :first_name   => Faker::Name.first_name,
       :last_name    => Faker::Name.last_name,
       :country      => 'US',
-      :address      => Faker::Address.street_address + ', ' + Faker::Address.city + ' ' + Faker::Address.us_state_abbr + ' ' + Faker::Address.zip,
+      :address      => Faker::Address.street_address,
+      :city         => Faker::Address.city,
+      :state        => Faker::Address.us_state_abbr,
+      :zip          => Faker::Address.zip,
       :email        => Faker::Internet.email,
       :phone        => Faker::PhoneNumber.phone_number,
       :kennel_name  => Faker::Company.name,
       :bmdca_status => "Member since #{Time.now.year - rand(30)} (paid thru Apr 1, #{Time.now.year + 1})",
       :data_source  => 'BG People Submission'
   )}
+end
+
+def akc_registration
+  'WS' + Array.new.fill(0..7){|i| rand(10).to_s}.join
 end
 
 # Create a sire/dam/litter for each breeder
@@ -31,13 +38,19 @@ def make_dogs
       :registered_name => Faker::Company.name + "'s " + Faker::Company.catch_phrase,
       :call_name       => Faker::Name.first_name,
       :female          => false,
-      :owner           => breeder
+      :neutered        => false,
+      :owner           => breeder,
+      :registration    => akc_registration,
+      :registry        => 'AKC'
     )
     dam = Dog.create!(
       :registered_name => Faker::Company.name + "'s " + Faker::Company.catch_phrase,
       :call_name       => Faker::Name.first_name,
       :female          => true,
-      :owner           => breeder
+      :neutered        => false,
+      :owner           => breeder,
+      :registration    => akc_registration,
+      :registry        => 'AKC'
     )
     litter = Litter.create( # breeder, sire, dam, whelp_date
       :breeder    => breeder,
@@ -49,7 +62,10 @@ def make_dogs
       litter.dogs << Dog.create(
         :registered_name => breeder.kennel_name + 's ' + Faker::Company.catch_phrase,
         :call_name       => Faker::Name.first_name,
-        :female          => rand(2) == 1
+        :female          => rand(2) == 1,
+        :neutered        => rand(10) < 7,
+        :registration    => akc_registration,
+        :registry        => 'AKC'
       )
     end
   end
@@ -64,7 +80,10 @@ def make_owners
       :first_name   => Faker::Name.first_name,
       :last_name    => Faker::Name.last_name,
       :country      => 'US',
-      :address      => Faker::Address.street_address + ', ' + Faker::Address.city + ' ' + Faker::Address.us_state_abbr + ' ' + Faker::Address.zip,
+      :address      => Faker::Address.street_address,
+      :city         => Faker::Address.city,
+      :state        => Faker::Address.us_state_abbr,
+      :zip          => Faker::Address.zip,
       :email        => Faker::Internet.email,
       :phone        => Faker::PhoneNumber.phone_number,
       :bmdca_status => "Member since #{Time.now.year - rand(30)} (paid thru Apr 1, #{Time.now.year + 1})",
