@@ -489,26 +489,26 @@ body.db.dogs > div.page > div.main > div.content > div.search_form > form > fiel
 body.db.dogs > div.page > div.main > div.content > div.search_form > form > input[type="submit"] {
   margin-left: 140px;
   margin-top: 10px; }
-body.db.dogs > div.page > div.main > div.content > dl {
+body.db.dogs > div.page > div.main > div.content > dl.overview {
   width: 770px; }
-  body.db.dogs > div.page > div.main > div.content > dl > dt {
+  body.db.dogs > div.page > div.main > div.content > dl.overview > dt {
     width: 120px; }
-    body.db.dogs > div.page > div.main > div.content > dl > dt:nth-child(3), body.db.dogs > div.page > div.main > div.content > dl > dt:nth-child(7) {
+    body.db.dogs > div.page > div.main > div.content > dl.overview > dt.name + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.call_name + dd {
+      width: 405px; }
+    body.db.dogs > div.page > div.main > div.content > dl.overview > dt.bg_id, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.sex {
       width: 100px; }
-    body.db.dogs > div.page > div.main > div.content > dl > dt:nth-child(21), body.db.dogs > div.page > div.main > div.content > dl > dt:nth-child(27), body.db.dogs > div.page > div.main > div.content > dl > dt:nth-child(33) {
+      body.db.dogs > div.page > div.main > div.content > dl.overview > dt.bg_id + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.sex + dd {
+        width: 135px; }
+    body.db.dogs > div.page > div.main > div.content > dl.overview > dt.registration + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.registration2 + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.dna + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.stud_book + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.data_source + dd {
+      width: 180px; }
+    body.db.dogs > div.page > div.main > div.content > dl.overview > dt.kennel_club + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.kennel_club2 + dd {
+      width: 340px; }
+    body.db.dogs > div.page > div.main > div.content > dl.overview > dt.whelp_date + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.deceased + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.semen + dd {
+      width: 90px; }
+    body.db.dogs > div.page > div.main > div.content > dl.overview > dt.litter, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.death, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.rescue {
       width: 110px; }
-  body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(2), body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(6) {
-    width: 405px; }
-  body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(4), body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(8) {
-    width: 135px; }
-  body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(10), body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(14), body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(18), body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(24), body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(30) {
-    width: 180px; }
-  body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(12), body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(16) {
-    width: 340px; }
-  body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(20), body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(26), body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(32) {
-    width: 90px; }
-  body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(22), body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(28), body.db.dogs > div.page > div.main > div.content > dl > dd:nth-child(34) {
-    width: 135px; }
+      body.db.dogs > div.page > div.main > div.content > dl.overview > dt.litter + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.death + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.rescue + dd {
+        width: 135px; }
 body.db.dogs > div.page > div.main > div.content > ul.nav li {
   display: inline;
   background: #dedede;

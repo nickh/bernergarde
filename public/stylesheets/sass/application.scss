@@ -696,36 +696,41 @@ body.db.dogs {
         margin-top: 10px;
       }
     }
-    // nickh
-    > dl {
+    > dl.overview {
       width: 770px;
       > dt {
         width: 120px;
-        &:nth-child(3),&:nth-child(7) {
+        &.name, &.call_name {
+          & + dd {
+            width: 405px;
+          }
+        }
+        &.bg_id, &.sex {
           width: 100px;
+          & + dd {
+            width: 135px;
+          }
         }
-        &:nth-child(21),&:nth-child(27),&:nth-child(33) {
+        &.registration, &.registration2, &.dna, &.stud_book, &.data_source {
+          & + dd {
+            width: 180px;
+          }
+        }
+        &.kennel_club, &.kennel_club2 {
+          & + dd {
+            width: 340px;
+          }
+        }
+        &.whelp_date, &.deceased, &.semen {
+          & + dd {
+            width: 90px;
+          }
+        }
+        &.litter, &.death, &.rescue {
           width: 110px;
-        }
-      }
-      > dd {
-        &:nth-child(2),&:nth-child(6) {
-          width: 405px;
-        }
-        &:nth-child(4),&:nth-child(8) {
-          width: 135px;
-        }
-        &:nth-child(10),&:nth-child(14),&:nth-child(18),&:nth-child(24),&:nth-child(30) {
-          width: 180px;
-        }
-        &:nth-child(12),&:nth-child(16) {
-          width: 340px;
-        }
-        &:nth-child(20),&:nth-child(26),&:nth-child(32) {
-          width: 90px;
-        }
-        &:nth-child(22),&:nth-child(28),&:nth-child(34) {
-          width: 135px;
+          & + dd {
+            width: 135px;
+          }
         }
       }
     }

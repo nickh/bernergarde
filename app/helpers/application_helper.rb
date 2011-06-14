@@ -15,6 +15,14 @@ module ApplicationHelper
     [:en, :de, :nl].reject{|lang| I18n.locale == lang}
   end
 
+  def sex_info(dog)
+    if dog.female?
+      t('db.dog.female') + (dog.neutered?? t('db.dog.spayed')   : '')
+    else
+      t('db.dog.male')   + (dog.neutered?? t('db.dog.neutered') : '')
+    end
+  end
+
   def state_options
     [
       [t('db.search.people.state_prompt'), ''],

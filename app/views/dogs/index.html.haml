@@ -1,0 +1,61 @@
+%h2= t('db.search.dogs.header')
+
+%p.instructions= t('db.search.dogs.instructions')
+
+%p.help
+  %a{:href => '#'}
+    %span= t('db.search.dogs.help')
+
+.search_form
+  =form_tag(search_dogs_path(I18n.locale)) do
+    %fieldset
+      =label_tag('dog[registered_name]', t('db.search.dogs.registered_name'))
+      =text_field_tag('dog[registered_name]', nil, :size => 40)
+      =radio_button_tag('dog[registered_name_match]', 'begins', true)
+      %span= t('db.search.begins_with')
+      =radio_button_tag('dog[registered_name_match]', 'begins', false)
+      %span= t('db.search.contains')
+
+    %fieldset
+      =label_tag('dog[call_name]', t('db.search.dogs.call_name'))
+      =text_field_tag('dog[call_name]', nil, :size => 15)
+      =radio_button_tag('dog[call_name_match]', 'begins', true)
+      %span= t('db.search.begins_with')
+      =radio_button_tag('dog[call_name_match]', 'begins', false)
+      %span= t('db.search.contains')
+
+    %fieldset
+      =label_tag('dog[registration_number]', t('db.search.dogs.registration_number'))
+      =text_field_tag('dog[registration_number]', nil, :size => 15)
+      =radio_button_tag('dog[registration_number_match]', 'begins', true)
+      %span= t('db.search.begins_with')
+      =radio_button_tag('dog[registration_number_match]', 'begins', false)
+      %span= t('db.search.contains')
+
+    %fieldset
+      =label_tag('dog[dna_registration_number]', t('db.search.dogs.dna_registration_number'))
+      =text_field_tag('dog[dna_registration_number]')
+      %span= t('db.search.contains')
+
+    %fieldset
+      =label_tag('dog[microchip_number]', t('db.search.dogs.microchip_number'))
+      =text_field_tag('dog[microchip_number]')
+      %span= t('db.search.contains')
+
+    %fieldset
+      =label_tag('dog[breeder_last_name]', t('db.search.dogs.breeder_last_name'))
+      =text_field_tag('dog[breeder_last_name]')
+      %span= t('db.search.contains')
+
+    %fieldset
+      =label_tag('dog[kennel_name]', t('db.search.dogs.kennel_name'))
+      =text_field_tag('dog[kennel_name]')
+      %span= t('db.search.contains')
+
+    %p= t('db.search.dogs.bgid_prompt')
+
+    %fieldset
+      =label_tag('bg_id', t('db.search.dogs.bgid'))
+      =text_field_tag('bg_id', nil, :size => 6)
+
+    =submit_tag t('db.search.dogs.submit')

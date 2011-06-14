@@ -32,6 +32,72 @@ describe ApplicationHelper do
     end
   end
 
+  describe '.sex_info' do
+    before(:each) do
+      @dog = Dog.new
+    end
+
+    context 'for a neutered' do
+      before(:each) do
+        @dog.neutered = true
+      end
+
+      context 'dog' do
+        before(:each) do
+          @dog.female = false
+        end
+
+        it 'is a neutered male' do
+          info = helper.sex_info(@dog)
+          info.should match /^#{Regexp.escape t('db.dog.male')}/
+          info.should match /#{Regexp.escape t('db.dog.neutered')}$/
+        end
+      end
+
+      context 'bitch' do
+        before(:each) do
+          @dog.female = true
+        end
+
+        it 'is a spayed female' do
+          info = helper.sex_info(@dog)
+          info.should match /^#{Regexp.escape t('db.dog.female')}/
+          info.should match /#{Regexp.escape t('db.dog.spayed')}$/
+        end
+      end
+    end
+
+    context 'for an intact' do
+      before(:each) do
+        @dog.neutered = false
+      end
+
+      context 'dog' do
+        before(:each) do
+          @dog.female = false
+        end
+
+        it 'is male' do
+          info = helper.sex_info(@dog)
+          info.should     match /^#{Regexp.escape t('db.dog.male')}/
+          info.should_not match /#{Regexp.escape t('db.dog.neutered')}$/
+        end
+      end
+
+      context 'bitch' do
+        before(:each) do
+          @dog.female = true
+        end
+
+        it 'is female' do
+          info = helper.sex_info(@dog)
+          info.should     match /^#{Regexp.escape t('db.dog.female')}/
+          info.should_not match /#{Regexp.escape t('db.dog.spayed')}$/
+        end
+      end
+    end
+  end
+
   describe '.state_options' do
     it 'is an array of arrays' do
       states = helper.state_options

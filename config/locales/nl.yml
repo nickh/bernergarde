@@ -4,6 +4,7 @@ nl:
   date:
     formats:
       db_people: "%-m/%-d/%Y"
+      db_dog: "%b %d, %Y"
   time:
     formats:
       db: "%-m/%-d/%Y %-I:%M:%S%p"
@@ -63,6 +64,22 @@ nl:
         bgid: BG People ID
         submit: Zoekformulier
         resource: mensen
+      dogs:
+        header: Hond Zoeken
+        instructions: Geef een van de zoekopties hieronder opgesomd.
+        help: Klik hier om te zoeken naar aanwijzingen en tips te geven.
+        bgid_prompt: 'Als u weet de exacte Berner-Garde Hond ID, kunt u hier invullen:'
+        invalid_bgid: 'Niet in staat om de hond te vinden met Berner-Garde ID %{bgid}'
+        registered_name: Geregistreerd Naam
+        call_name: Roepnaam
+        registration_number: Registratie Nummer
+        dna_registration_number: 'DNA-Registratie #'
+        microchip_number: 'Microchip #'
+        breeder_last_name: Fokker Achternaam
+        kennel_name: Kennel Naam
+        bgid: BG Hond ID
+        submit: Zoekformulier
+        resource: honden
     people:
       header: Mensen Detail Info
       name: 'Naam:'
@@ -108,6 +125,63 @@ nl:
         dam_name: Dam Naam
       clubs:
         name: Naam
+    dog:
+      header: Hond Detailinfo
+      sex: 'Seks:'
+      male: Mannelijk
+      female: Vrouwelijk
+      neutered: ' (gecastreerd)'
+      spayed: ' (gesteriliseerd)'
+      name: 'Naam Hond:'
+      bg_id: 'Hond ID:'
+      call_name: 'Roepnaam:'
+      registration_number: 'Registratie #:'
+      kennel_club: 'Kynologenclub:'
+      registration_number2: 'Registratie #2:'
+      kennel_club2: 'Kynologenclub #2:'
+      dna_registration_number: 'DNA Reg #:'
+      whelp_date: 'Welp Datum:'
+      litter_id: 'Nest ID:'
+      stud_book_date: 'Stud Boekdatum:'
+      deceased: 'Overledene:'
+      death_date: 'Death Datum:'
+      data_source: 'Gegevensbron:'
+      frozen_semen: 'Ingevroren Sperma:'
+      rescue_type: 'Rescue Type:'
+      last_updated: 'Laatst Bijgewerkt:'
+      registry:
+        akc: 'American Kennel Club'
+      subsection:
+        header: Aanvullende Hond Detail Informatie
+      person: &dog_person
+        bg_id: 'Mensen ID:'
+        name: Naam Eigenaar
+        location: Stad / Staat
+        reside: Wonen
+      owner:
+        <<: *dog_person
+      breeder:
+        <<: *dog_person
+        kennel: Kennel Naam
+      litter:
+        header: 'Informatie Nest:'
+        sire: 'Sire:'
+        dam: 'Dam:'
+        bg_id: Hond ID
+        registered_name: Geregistreerd Naam
+        registration: 'Registratie #'
+        call_name: Roepnaam
+        footer: 'Merk op dat de Fokker, Sire & Dam worden bepaald door het nest deze hond afkomstig is.'
+      nav:
+        owner: Eigenaar
+        breeder: Fokker
+        physical: Fysiek
+        certs: Certs/Testen
+        health: Gezondheid Info
+        studies: Studies
+        titles: Titels/Awards
+        litters: Nesten
+        photo: Foto
   trustees:
     president: Voorzitter
     vice_president: Vice-voorzitter

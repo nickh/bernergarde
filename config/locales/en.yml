@@ -4,6 +4,7 @@ en:
   date:
     formats:
       db_people: "%-m/%-d/%Y"
+      db_dog: "%b %d, %Y"
   time:
     formats:
       db: "%-m/%-d/%Y %-I:%M:%S%p"
@@ -63,6 +64,22 @@ en:
         bgid: BG People ID
         submit: Submit Search
         resource: people
+      dogs:
+        header: Dog Search
+        instructions: Enter any one of the search options listed below.
+        help: Click here to view searching instructions and tips.
+        bgid_prompt: 'If you know the exact Berner-Garde Dog ID, you can enter it here:'
+        invalid_bgid: 'Unable to find dog with Berner-Garde ID %{bgid}'
+        registered_name: Registered Name
+        call_name: Call Name
+        registration_number: Registration Number
+        dna_registration_number: 'DNA Registration #'
+        microchip_number: 'Microchip #'
+        breeder_last_name: Breeder Last Name
+        kennel_name: Kennel Name
+        bgid: BG Dog ID
+        submit: Submit Search
+        resource: dogs
     people:
       header: People Detail Info
       name: 'Name:'
@@ -108,6 +125,63 @@ en:
         dam_name: Dam Name
       clubs:
         name: Name
+    dog:
+      header: Dog Detail Info
+      sex: 'Sex:'
+      male: Male
+      female: Female
+      neutered: ' (neutered)'
+      spayed: ' (spayed)'
+      name: 'Dog Name:'
+      bg_id: 'Dog ID:'
+      call_name: 'Call Name:'
+      registration_number: 'Registration #:'
+      kennel_club: 'Kennel Club:'
+      registration_number2: 'Registration #2:'
+      kennel_club2: 'Kennel Club #2:'
+      dna_registration_number: 'DNA Reg #:'
+      whelp_date: 'Whelp Date:'
+      litter_id: 'Litter ID:'
+      stud_book_date: 'Stud Book Date:'
+      deceased: 'Deceased:'
+      death_date: 'Death Date:'
+      data_source: 'Data Source:'
+      frozen_semen: 'Frozen Semen:'
+      rescue_type: 'Rescue Type:'
+      last_updated: 'Last Updated:'
+      registry:
+        akc: American Kennel Club
+      subsection:
+        header: Additional Dog Detail Information
+      person: &dog_person
+        bg_id: People ID
+        name: Owner Name
+        location: City / State
+        reside: Reside
+      owner:
+        <<: *dog_person
+      breeder:
+        <<: *dog_person
+        kennel: Kennel Name
+      litter:
+        header: 'Litter Information:'
+        sire: 'Sire:'
+        dam: 'Dam:'
+        bg_id: Dog ID
+        registered_name: Registered Name
+        registration: 'Registration #'
+        call_name: Call Name
+        footer: 'Note that the Breeder, Sire & Dam are specified by the litter this dog is from.'
+      nav:
+        owner: Owner
+        breeder: Breeder
+        physical: Physical
+        certs: Certs/Tests
+        health: Health Info
+        studies: Studies
+        titles: Titles/Awards
+        litters: Litters
+        photo: Photo
   trustees:
     president: President
     vice_president: Vice President
