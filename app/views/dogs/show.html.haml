@@ -25,7 +25,7 @@
   %dt.whelp_date>=    t('db.dog.whelp_date')
   %dd>=               l(@dog.whelp_date, :format => :db_dog) if @dog.litter
   %dt.litter>=        t('db.dog.litter_id')
-  %dd>=               @dog.litter.id
+  %dd>=               @dog.litter.id if @dog.litter
   %dt.stud_book>=     t('db.dog.stud_book_date')
   %dd>
   %dt.deceased>=      t('db.dog.deceased')
