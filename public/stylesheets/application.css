@@ -165,6 +165,7 @@ body.db > div.page {
       background: #930;
       background: -webkit-gradient(linear, left center, right center, from(#993300), to(white), color-stop(0.4, #993300), color-stop(0.85, white));
       background: -moz-linear-gradient(left, #993300, #993300 40%, white 85%);
+      background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9Imc3OTIiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiM5OTMzMDAiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiM5OTMzMDAiIG9mZnNldD0iMC40Ii8+PHN0b3Agc3RvcC1jb2xvcj0iI0ZGRkZGRiIgb2Zmc2V0PSIwLjg1Ii8+CjwvbGluZWFyR3JhZGllbnQ+CjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZzc5MikiIC8+Cjwvc3ZnPg==);
       padding: 4px 0px;
       position: relative; }
       body.db > div.page > div.main > div.header > h1 {
