@@ -253,6 +253,7 @@ body.db {
           font-weight: bold;
           text-decoration: underline;
           margin: 5px 0 8px 0;
+          clear: both;
         }
         > p {
           margin: 1px 0px;
@@ -296,10 +297,13 @@ body.db {
           }
         }
         > dl.overview {
-          border: 1px solid silver;
-          background: cornsilk;
+          width: 100%;
           margin: 0;
           > dt, dd {
+            float: left;
+            background: cornsilk;
+            height: 1.7em;
+            min-height: 1.7em;
             display: inline-block;
             white-space: nowrap;
             overflow: hidden;
@@ -312,15 +316,17 @@ body.db {
             text-align: right;
             font-weight: bold;
             &.name, &.bg_id {
+              border-top: 1px solid silver;
               &+dd {
+                border-top: 1px solid silver;
                 font-weight: bold;
                 color: #990000;
               }
             }
             &.last_updated {
-              border-bottom: none;
+              margin-bottom: 5px;
               &+dd {
-                border-bottom: none;
+                margin-bottom: 5px;
               }
             }
           }
@@ -623,9 +629,17 @@ body.links {
 body.db.people {
   > div.page > div.main > div.content {
     > dl.overview {
-      width: 740px;
       > dt {
         width: 100px;
+        &.name,&.second_name,&.address,&.city_state_zip,&.email,&.web_site,&.kennel_name,&.bmdca_status,&.master_household,&.last_updated {
+          clear: both;
+          border-left: 1px solid silver;
+        }
+        &.bg_id,&.country,&.address2,&.phone,&.email,&.fax,&.deceased,&.display,&.data_source,&.last_updated {
+          &+dd {
+            border-right: 1px solid silver;
+          }
+        }
         &.master_household {
           width: 160px;
           &+dd {
@@ -640,7 +654,7 @@ body.db.people {
         &.city_state_zip {
           color: cornsilk;
         }
-        &.email {
+        &.email,&.last_updated {
           &+dd {
             width: 635px;
           }
@@ -699,9 +713,17 @@ body.db.dogs {
       }
     }
     > dl.overview {
-      width: 770px;
       > dt {
         width: 120px;
+        &.name,&.call_name,&.registration,&.registration2,&.dna,&.stud_book,&.data_source,&.last_updated {
+          clear: both;
+          border-left: 1px solid silver;
+        }
+        &.bg_id,&.sex,&.kennel_club,&.kennel_club2,&.litter,&.death,&.rescue,&.last_updated {
+          &+dd {
+            border-right: 1px solid silver;
+          }
+        }
         &.name, &.call_name {
           & + dd {
             width: 405px;
@@ -732,6 +754,11 @@ body.db.dogs {
           width: 110px;
           & + dd {
             width: 135px;
+          }
+        }
+        &.last_updated {
+          & + dd {
+            width: 645px;
           }
         }
       }

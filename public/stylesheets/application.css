@@ -200,7 +200,8 @@ body.db > div.page {
         font-size: 1.0em;
         font-weight: bold;
         text-decoration: underline;
-        margin: 5px 0 8px 0; }
+        margin: 5px 0 8px 0;
+        clear: both; }
       body.db > div.page > div.main > div.content > p {
         margin: 1px 0px; }
         body.db > div.page > div.main > div.content > p.instructions {
@@ -230,10 +231,13 @@ body.db > div.page {
         body.db > div.page > div.main > div.content > div.search_form > form > input[type="submit"] {
           margin-left: 130px; }
       body.db > div.page > div.main > div.content > dl.overview {
-        border: 1px solid silver;
-        background: cornsilk;
+        width: 100%;
         margin: 0; }
         body.db > div.page > div.main > div.content > dl.overview > dt, body.db > div.page > div.main > div.content > dl.overview dd {
+          float: left;
+          background: cornsilk;
+          height: 1.7em;
+          min-height: 1.7em;
           display: inline-block;
           white-space: nowrap;
           overflow: hidden;
@@ -244,13 +248,16 @@ body.db > div.page {
         body.db > div.page > div.main > div.content > dl.overview > dt {
           text-align: right;
           font-weight: bold; }
-          body.db > div.page > div.main > div.content > dl.overview > dt.name + dd, body.db > div.page > div.main > div.content > dl.overview > dt.bg_id + dd {
-            font-weight: bold;
-            color: #990000; }
+          body.db > div.page > div.main > div.content > dl.overview > dt.name, body.db > div.page > div.main > div.content > dl.overview > dt.bg_id {
+            border-top: 1px solid silver; }
+            body.db > div.page > div.main > div.content > dl.overview > dt.name + dd, body.db > div.page > div.main > div.content > dl.overview > dt.bg_id + dd {
+              border-top: 1px solid silver;
+              font-weight: bold;
+              color: #990000; }
           body.db > div.page > div.main > div.content > dl.overview > dt.last_updated {
-            border-bottom: none; }
+            margin-bottom: 5px; }
             body.db > div.page > div.main > div.content > dl.overview > dt.last_updated + dd {
-              border-bottom: none; }
+              margin-bottom: 5px; }
         body.db > div.page > div.main > div.content > dl.overview > dd {
           padding-left: 5px; }
       body.db > div.page > div.main > div.content > ul.nav {
@@ -446,24 +453,27 @@ body.links > div.main > div.content > ul.links > li {
   display: block;
   margin-left: 0px; }
 
-body.db.people > div.page > div.main > div.content > dl.overview {
-  width: 740px; }
-  body.db.people > div.page > div.main > div.content > dl.overview > dt {
-    width: 100px; }
-    body.db.people > div.page > div.main > div.content > dl.overview > dt.master_household {
-      width: 160px; }
-      body.db.people > div.page > div.main > div.content > dl.overview > dt.master_household + dd {
-        width: 205px; }
-    body.db.people > div.page > div.main > div.content > dl.overview > dt.address + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.address2 + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.data_source + dd {
-      width: 265px; }
-    body.db.people > div.page > div.main > div.content > dl.overview > dt.city_state_zip {
-      color: cornsilk; }
-    body.db.people > div.page > div.main > div.content > dl.overview > dt.email + dd {
-      width: 635px; }
-    body.db.people > div.page > div.main > div.content > dl.overview > dt.bg_id + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.country + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.phone + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.fax + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.deceased + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.display + dd {
-      width: 185px; }
-  body.db.people > div.page > div.main > div.content > dl.overview > dd {
-    width: 345px; }
+body.db.people > div.page > div.main > div.content > dl.overview > dt {
+  width: 100px; }
+  body.db.people > div.page > div.main > div.content > dl.overview > dt.name, body.db.people > div.page > div.main > div.content > dl.overview > dt.second_name, body.db.people > div.page > div.main > div.content > dl.overview > dt.address, body.db.people > div.page > div.main > div.content > dl.overview > dt.city_state_zip, body.db.people > div.page > div.main > div.content > dl.overview > dt.email, body.db.people > div.page > div.main > div.content > dl.overview > dt.web_site, body.db.people > div.page > div.main > div.content > dl.overview > dt.kennel_name, body.db.people > div.page > div.main > div.content > dl.overview > dt.bmdca_status, body.db.people > div.page > div.main > div.content > dl.overview > dt.master_household, body.db.people > div.page > div.main > div.content > dl.overview > dt.last_updated {
+    clear: both;
+    border-left: 1px solid silver; }
+  body.db.people > div.page > div.main > div.content > dl.overview > dt.bg_id + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.country + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.address2 + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.phone + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.email + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.fax + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.deceased + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.display + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.data_source + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.last_updated + dd {
+    border-right: 1px solid silver; }
+  body.db.people > div.page > div.main > div.content > dl.overview > dt.master_household {
+    width: 160px; }
+    body.db.people > div.page > div.main > div.content > dl.overview > dt.master_household + dd {
+      width: 205px; }
+  body.db.people > div.page > div.main > div.content > dl.overview > dt.address + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.address2 + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.data_source + dd {
+    width: 265px; }
+  body.db.people > div.page > div.main > div.content > dl.overview > dt.city_state_zip {
+    color: cornsilk; }
+  body.db.people > div.page > div.main > div.content > dl.overview > dt.email + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.last_updated + dd {
+    width: 635px; }
+  body.db.people > div.page > div.main > div.content > dl.overview > dt.bg_id + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.country + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.phone + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.fax + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.deceased + dd, body.db.people > div.page > div.main > div.content > dl.overview > dt.display + dd {
+    width: 185px; }
+body.db.people > div.page > div.main > div.content > dl.overview > dd {
+  width: 345px; }
 
 body.db.dogs > div.page > div.main > div.content > h2 {
   background: #cae1ff; }
@@ -490,26 +500,31 @@ body.db.dogs > div.page > div.main > div.content > div.search_form > form > fiel
 body.db.dogs > div.page > div.main > div.content > div.search_form > form > input[type="submit"] {
   margin-left: 140px;
   margin-top: 10px; }
-body.db.dogs > div.page > div.main > div.content > dl.overview {
-  width: 770px; }
-  body.db.dogs > div.page > div.main > div.content > dl.overview > dt {
-    width: 120px; }
-    body.db.dogs > div.page > div.main > div.content > dl.overview > dt.name + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.call_name + dd {
-      width: 405px; }
-    body.db.dogs > div.page > div.main > div.content > dl.overview > dt.bg_id, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.sex {
-      width: 100px; }
-      body.db.dogs > div.page > div.main > div.content > dl.overview > dt.bg_id + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.sex + dd {
-        width: 135px; }
-    body.db.dogs > div.page > div.main > div.content > dl.overview > dt.registration + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.registration2 + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.dna + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.stud_book + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.data_source + dd {
-      width: 180px; }
-    body.db.dogs > div.page > div.main > div.content > dl.overview > dt.kennel_club + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.kennel_club2 + dd {
-      width: 340px; }
-    body.db.dogs > div.page > div.main > div.content > dl.overview > dt.whelp_date + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.deceased + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.semen + dd {
-      width: 90px; }
-    body.db.dogs > div.page > div.main > div.content > dl.overview > dt.litter, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.death, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.rescue {
-      width: 110px; }
-      body.db.dogs > div.page > div.main > div.content > dl.overview > dt.litter + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.death + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.rescue + dd {
-        width: 135px; }
+body.db.dogs > div.page > div.main > div.content > dl.overview > dt {
+  width: 120px; }
+  body.db.dogs > div.page > div.main > div.content > dl.overview > dt.name, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.call_name, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.registration, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.registration2, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.dna, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.stud_book, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.data_source, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.last_updated {
+    clear: both;
+    border-left: 1px solid silver; }
+  body.db.dogs > div.page > div.main > div.content > dl.overview > dt.bg_id + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.sex + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.kennel_club + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.kennel_club2 + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.litter + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.death + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.rescue + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.last_updated + dd {
+    border-right: 1px solid silver; }
+  body.db.dogs > div.page > div.main > div.content > dl.overview > dt.name + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.call_name + dd {
+    width: 405px; }
+  body.db.dogs > div.page > div.main > div.content > dl.overview > dt.bg_id, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.sex {
+    width: 100px; }
+    body.db.dogs > div.page > div.main > div.content > dl.overview > dt.bg_id + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.sex + dd {
+      width: 135px; }
+  body.db.dogs > div.page > div.main > div.content > dl.overview > dt.registration + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.registration2 + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.dna + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.stud_book + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.data_source + dd {
+    width: 180px; }
+  body.db.dogs > div.page > div.main > div.content > dl.overview > dt.kennel_club + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.kennel_club2 + dd {
+    width: 340px; }
+  body.db.dogs > div.page > div.main > div.content > dl.overview > dt.whelp_date + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.deceased + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.semen + dd {
+    width: 90px; }
+  body.db.dogs > div.page > div.main > div.content > dl.overview > dt.litter, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.death, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.rescue {
+    width: 110px; }
+    body.db.dogs > div.page > div.main > div.content > dl.overview > dt.litter + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.death + dd, body.db.dogs > div.page > div.main > div.content > dl.overview > dt.rescue + dd {
+      width: 135px; }
+  body.db.dogs > div.page > div.main > div.content > dl.overview > dt.last_updated + dd {
+    width: 645px; }
 body.db.dogs > div.page > div.main > div.content > ul.nav li {
   display: inline;
   background: #dedede;
