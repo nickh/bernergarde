@@ -1,9 +1,19 @@
 source 'http://rubygems.org'
 
-gem 'rails', '~> 3.0.0'
+gem 'rails', '~> 3.2.0'
 gem 'haml'
 gem 'sass'
-gem 'sqlite3-ruby', '1.2.5', :require => 'sqlite3'
+gem 'sqlite3'
+
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'sass-rails'
+  gem 'coffee-rails'
+  gem 'uglifier'
+end
+
+gem 'jquery-rails'
 
 group :test, :development do
   gem 'rspec-rails'

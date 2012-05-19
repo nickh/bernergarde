@@ -6,11 +6,13 @@
     %title= t('site.title')
     =csrf_meta_tag
     =stylesheet_link_tag 'application'
-    =stylesheet_link_tag 'blueprint/screen', :media => 'screen'
-    =stylesheet_link_tag 'blueprint/print', :media => 'print'
+    =stylesheet_link_tag 'application-print', :media => 'print'
+    =javascript_include_tag 'application'
+    /[if lte IE 8]
+      = stylesheet_link_tag 'application-ie'
 
   %body{:class => ['bgf',bgf_page_class]}
-    .span-24.main
+    .container
       .header
         %h1= t('site.header')
         - if request.method == 'GET'

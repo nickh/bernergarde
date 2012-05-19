@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -14,8 +15,8 @@ ActiveRecord::Schema.define(:version => 20110606004732) do
 
   create_table "certifications", :force => true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "club_memberships", :force => true do |t|
@@ -35,8 +36,8 @@ ActiveRecord::Schema.define(:version => 20110606004732) do
     t.string   "identifier"
     t.string   "findings"
     t.date     "tested_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "completed_titles", :force => true do |t|
@@ -54,8 +55,8 @@ ActiveRecord::Schema.define(:version => 20110606004732) do
     t.string   "location"
     t.string   "metrical"
     t.date     "diagnosed_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "dogs", :force => true do |t|
@@ -74,8 +75,8 @@ ActiveRecord::Schema.define(:version => 20110606004732) do
     t.boolean  "frozen_semen"
     t.date     "stud_book_date"
     t.date     "deceased_at"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",       :null => false
+    t.datetime "updated_at",       :null => false
   end
 
   create_table "litters", :force => true do |t|
@@ -99,8 +100,8 @@ ActiveRecord::Schema.define(:version => 20110606004732) do
     t.string   "data_source"
     t.boolean  "deceased"
     t.boolean  "master_household"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
     t.string   "first_name"
     t.string   "last_name"
     t.string   "city"
