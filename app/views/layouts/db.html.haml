@@ -8,16 +8,20 @@
     =stylesheet_link_tag    'application'
     =stylesheet_link_tag    'application-print', :media => 'print'
     =javascript_include_tag 'application'
-    =yield :javascript
+    =javascript_include_tag "http://use.typekit.com/duh5mlx.js"
+    :javascript
+      try{Typekit.load();}catch(e){}
 
   %body{:class => ['db', db_page_class]}
-    .page.span-24.last
+    .container
       .nav
         =render :partial => 'database/nav'
       .main
         .header
           %h1= t('db.site.header')
+          %h2= t('db.site.subheader')
           - if request.method == 'GET'
             .lang= render :partial => 'shared/lang'
+          .version 4.0
         .content
           =yield

@@ -30,7 +30,8 @@ en:
     country:
       us: 'United States of America'
     site:
-      header: Berner-Garde Database Access
+      header: Berner-Garde
+      subheader: The Open Bernese Mountain Dog Database
     welcome:
       heading: Welcome to the Berner-Garde Database
       access: You must log in to modify database information.
@@ -126,7 +127,7 @@ en:
       clubs:
         name: Name
     dog:
-      header: Dog Detail Info
+      header: Dog Detail Display
       sex: 'Sex:'
       male: Male
       female: Female

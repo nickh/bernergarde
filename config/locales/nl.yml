@@ -30,7 +30,8 @@ nl:
     country:
       us: 'Verenigde Staten van Amerika'
     site:
-      header: Berner-Garde Database Access
+      header: Berner-Garde
+      subheader: De Open Berner Sennenhond Database
     welcome:
       heading: Welkom bij de Berner-Garde Database
       access: U moet ingelogd zijn om informatie uit de database te wijzigen.
@@ -126,7 +127,7 @@ nl:
       clubs:
         name: Naam
     dog:
-      header: Hond Detailinfo
+      header: Hond Detail Weer
       sex: 'Seks:'
       male: Mannelijk
       female: Vrouwelijk

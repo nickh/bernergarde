@@ -162,42 +162,44 @@ body.bgf {
 
 /* Generic style definition for all pages in the db layout */
 body.db {
-  > div.page {
+  background: #890000;
+  > div.container {
     display: block;
+    width: 100%;
     height: 100%;
     position: relative;
     > div.nav {
-      background: #930;
       width: 88px;
       position: absolute;
       height: 100%;
       > ul {
         padding-top: 74px;
         padding-left: 0px;
-        background: url('/images/BG_logo_76.jpg') no-repeat 50% 0px;
+        background: url('/assets/BG_logo_76.jpg') no-repeat 50% 0px;
         list-style-type: none;
         margin: 3px;
         > li {
-          margin-top: 2px;
+          background: #290000;
+          margin-top: 4px;
           margin-bottom: 2px;
-          border-top: 1px solid black;
-          border-bottom: 1px solid black;
+          border-top: 1px solid #C0C0C0;
+          border-bottom: 1px solid #C0C0C0;
           padding-top: 2px;
           padding-bottom: 4px;
-          font-size: 0.9em;
+          font-size: 11px;
           font-weight: bold;
-          line-height: 1.0em;
+          line-height: 1.1em;
           text-align: center;
           > a {
             width: 100%;
-            color: #FFF68F;
+            color: white;
             text-decoration: none;
           }
           &:hover {
-            background: #A74E3C;
-            border: 1px solid #FFEC8B;
+            background: #FFD633;
+            border: 1px solid black;
             > a {
-              color: white;
+              color: black;
             }
           }
         }
@@ -205,48 +207,74 @@ body.db {
     }
     > div.main {
       border-left: 86px solid #930;
+      height: 100%;
       > div.header {
-        background: #930;
-        background: -webkit-gradient(linear, left center, right center,
-                    from(#930), to(white), color-stop(0.4, #930), color-stop(0.85, white));
-        background: -moz-linear-gradient(left, #930, #930 40%, white 85%);
-        background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPgo8bGluZWFyR3JhZGllbnQgaWQ9Imc3OTIiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIwJSI+CjxzdG9wIHN0b3AtY29sb3I9IiM5OTMzMDAiIG9mZnNldD0iMCIvPjxzdG9wIHN0b3AtY29sb3I9IiM5OTMzMDAiIG9mZnNldD0iMC40Ii8+PHN0b3Agc3RvcC1jb2xvcj0iI0ZGRkZGRiIgb2Zmc2V0PSIwLjg1Ii8+CjwvbGluZWFyR3JhZGllbnQ+CjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InVybCgjZzc5MikiIC8+Cjwvc3ZnPg==);
-
-        padding: 4px 0px;
+        padding: 8px 0px;
         position: relative;
-        > h1 {
+        width: 100%;
+        > h1, h2 {
           display: inline;
-          color: #ffffd1;
-          font-size: 2.1em;
-          font-weight: bold;
+          font-family: "museo-sans-rounded",sans-serif;
           margin-left: 20px;
-          padding: 8px 0px;
-          text-shadow: 3px 3px 3px #4A1900;
+        }
+        > h1 {
+          color: #E7E7E7;
+          letter-spacing: 2px;
+          text-shadow: -4px 4px 3px #290000;
+          font-weight: 900;
+          font-size: 37px;
+        }
+        > h2 {
+          color: #F4EC8B;
+          letter-spacing: 1px;
+          text-shadow: 4px 4px 3px #290000;
+          font-weight: 900;
+          font-size: 14px;
         }
         > div.lang {
           position: absolute;
-          bottom: 2px;
-          right: 0px;
+          bottom: 8px;
+          right: 60px;
+          color: #F4EC8B;
           > ul {
             display: inline;
             padding-left: 0;
             > li {
               display: inline;
               list-style-type: none;
+              > a {
+                color: #F4F3BB;
+              }
             }
           }
         }
+        > div.version {
+          float: right;
+          font-size: 30px;
+          font-weight: bold;
+          color: #890000;
+          text-shadow: 2px 2px 2px #222, -1px -1px 2px #B35C5C;
+          margin-right: 15px;
+        }
       }
       > div.content {
-        margin-left: 10px;
+        background: #FEF6E4;
+        margin-left: 4px;
+        padding-top: 1px;
+        padding-left: 10px;
+        height: 100%;
+        border-top-left-radius: 8px;
+        -webkit-border-top-left-radius: 8px;
         h2 {
-          margin: 5px 0px;
+          margin: 8px 0px;
           padding: 0px 0px 0px 5px;
           font-size: 1.2em;
           font-weight: bold;
           width: 20em;
-          background: #CFC;
-          border: 2px solid gray;
+          background: #C2E0FF;
+          border: 1px solid black;
+          border-radius: 5px;
+          -webkit-border-radius: 5px;
         }
         h3 {
           font-size: 1.0em;
@@ -297,7 +325,7 @@ body.db {
         }
         > dl.overview {
           border: 1px solid silver;
-          background: cornsilk;
+          background: #F5F2D3;
           margin: 0;
           > dt, dd {
             display: inline-block;
@@ -621,7 +649,7 @@ body.links {
 }
 
 body.db.people {
-  > div.page > div.main > div.content {
+  > div.container > div.main > div.content {
     > dl.overview {
       width: 740px;
       > dt {
@@ -659,7 +687,7 @@ body.db.people {
 }
 
 body.db.dogs {
-  > div.page > div.main > div.content {
+  > div.container > div.main > div.content {
     > h2 {
       background: #cae1ff;
     }

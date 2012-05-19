@@ -30,7 +30,8 @@ de:
     country:
       us: 'Vereinigte Staaten von Amerika'
     site:
-      header: Berner-Garde Database Access
+      header: Berner-Garde
+      subheader: Die Open Database Berner Sennenhund
     welcome:
       heading: Willkommen in der Berner-Garde-Datenbank
       access: Du musst angemeldet sein, um datenbankinformationen ändern.
@@ -126,7 +127,7 @@ de:
       clubs:
         name: Name
     dog:
-      header: Hund Detail Info
+      header: Dog Detailanzeige
       sex: 'Geschlecht:'
       male: Männlich
       female: Weiblich
