@@ -6,6 +6,8 @@ de:
       db_people: "%-m/%-d/%Y"
       db_dog: "%b %d, %Y"
   time:
+    am: 'AM'
+    pm: 'PM'
     formats:
       db: "%-m/%-d/%Y %-I:%M:%S%p"
   site:
@@ -82,7 +84,7 @@ de:
         submit: Submit Search
         resource: hunde
     people:
-      header: Menschen Detailinfo
+      header: Die Menschen Detailanzeige
       name: 'Name:'
       bg_id: 'Menschen ID:'
       second_name: 'Zweiter Name:'
@@ -104,14 +106,13 @@ de:
       master_household: 'Master Haushalts-Rekord:'
       data_source: 'Quelle der Daten:'
       last_updated: 'Zuletzt Aktualisiert Am:'
-      subsection:
-        header: Zusätzliche Menschen Detail Information
       nav:
-        dogs_owned: Hunde Owned
-        litters_bred: Würfe Bred
+        dogs_owned: Hunde
+        litters_bred: Würfe
         clubs: Kreuz
         household: Haushalt
-      dogs_owned:
+      dogs:
+        header: Hunde Owned
         bg_id: ID
         registered_name: Registered Name
         call_name: Call Name
@@ -120,12 +121,16 @@ de:
         whelp_date: Welpe Date
         reside: Wohnen
         deceased: Verstorbene
-      litters_bred:
+      litters:
+        header: Würfe Bred
         litter_id: ID
         whelp_date: Welpe Date
         dam_name: Dam Name
       clubs:
+        header: Berner Club-Mitgliedschaft
         name: Name
+      household:
+        header: Haushalt Leute Linkage
     dog:
       header: Dog Detailanzeige
       sex: 'Geschlecht:'
@@ -152,18 +157,47 @@ de:
       last_updated: 'Zuletzt Aktualisiert Am:'
       registry:
         akc: American Kennel Club
-      subsection:
-        header: Zusätzliche Hund Detail Information
+      people:
+        owners: Besitzer(s)
+        breeders: Züchter(s)
       person: &dog_person
         bg_id: Menschen ID
-        name: Besitzer Name
-        location: Stadt / Staat
+        location: Adresse
         reside: Wohnen
       owner:
         <<: *dog_person
+        name: Besitzername
       breeder:
         <<: *dog_person
-        kennel: Kennel Name
+        name: Zwingernamen
+      relatives:
+        close:
+          header: Direkte Verwandschaft
+          subheader: 'Die folgenden informationen zu nahen verwandten wurde in der datenbank gefunden:'
+        relative: &dog_relative
+          whelp_date: Welpe Date
+          deceased: Verstorbene
+          hips: Hips
+          elbows: Ellenbogen
+          eyes: Blick
+          heart: Herz
+          vwd: vWD
+          dm: DM
+        sire:
+          <<: *dog_relative
+          name: Sire Namen
+        dam:
+          <<: *dog_relative
+          name: Dam Namen
+        full_siblings:
+          <<: *dog_relative
+          header: Vollgeschwister
+          name: Vollbruder Namen
+        half_siblings:
+          <<: *dog_relative
+          sire_header: Halbgeschwister von Sire
+          dam_header: Halbgeschwister von Dam
+          name: Halbgeschwister Namen
       litter:
         header: 'Litter Information:'
         sire: 'Vater:'
@@ -174,15 +208,17 @@ de:
         call_name: Call Namen
         footer: 'Beachten sie, dass die züchter, sire & dam von der wurf dieser hund ist aus angegeben werden.'
       nav:
-        owner: Besitzer
-        breeder: Züchter
-        physical: Physikalisch
-        certs: Certs/Tests
-        health: Health Info
-        studies: Studium
-        titles: Titel/Awards
+        people: Menschen
+        relatives: Verwandtschaft
         litters: Würfe
-        photo: Foto
+        certs: Certs
+        health: Gesundheit
+        physical: Physikalisch
+        studies: Studium
+        titles: Titel
+        photos: Fotos
+        pedigree: Stammbaum
+        coi: COI
   trustees:
     president: Präsident
     vice_president: Vizepräsident

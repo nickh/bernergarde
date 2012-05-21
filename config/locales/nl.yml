@@ -6,6 +6,8 @@ nl:
       db_people: "%-m/%-d/%Y"
       db_dog: "%b %d, %Y"
   time:
+    am: 'AM'
+    pm: 'PM'
     formats:
       db: "%-m/%-d/%Y %-I:%M:%S%p"
   site:
@@ -82,7 +84,7 @@ nl:
         submit: Zoekformulier
         resource: honden
     people:
-      header: Mensen Detail Info
+      header: Mensen Detail Weer
       name: 'Naam:'
       bg_id: 'Mensen ID:'
       second_name: 'Tweede Naam:'
@@ -107,11 +109,12 @@ nl:
       subsection:
         header: Extra Mensen Gedetaileerde Informatie
       nav:
-        dogs_owned: Honden Owned
-        litters_bred: Nesten Bred
+        dogs: Honden
+        litters: Nesten
         clubs: Clubs
         household: Huishouden
-      dogs_owned:
+      dogs:
+        header: Honden Owned
         bg_id: ID
         registered_name: Geregistreerd Naam
         call_name: Roepnaam
@@ -120,12 +123,16 @@ nl:
         whelp_date: Welp Datum
         reside: Wonen
         deceased: Overledene
-      litters_bred:
+      litters:
+        header: Nesten Bred
         litter_id: ID
         whelp_date: Welp Datum
         dam_name: Dam Naam
       clubs:
+        header: Berner Club Lidmaatschap
         name: Naam
+      household:
+        header: Huishoudelijke Mensen Linkage
     dog:
       header: Hond Detail Weer
       sex: 'Seks:'
@@ -152,18 +159,47 @@ nl:
       last_updated: 'Laatst Bijgewerkt:'
       registry:
         akc: 'American Kennel Club'
-      subsection:
-        header: Aanvullende Hond Detail Informatie
+      people:
+        owners: Eigenaar(en)
+        breeders: Fokker(s)
       person: &dog_person
         bg_id: 'Mensen ID:'
-        name: Naam Eigenaar
-        location: Stad / Staat
+        location: Adres
         reside: Wonen
       owner:
         <<: *dog_person
+        name: Eigenaar Naam
       breeder:
         <<: *dog_person
-        kennel: Kennel Naam
+        name: Fokker Naam
+      relatives:
+        close:
+          header: Naaste Familieleden
+          subheader: 'De volgende informatie voor naaste familieleden werd gevonden in de database:'
+        relative: &dog_relative
+          whelp_date: Welp Datum
+          deceased: Overledene
+          hips: Heupen
+          elbows: Ellebogen
+          eyes: Ogen
+          heart: Hart
+          vwd: vWD
+          dm: DM
+        sire:
+          <<: *dog_relative
+          name: Vader Naam
+        dam:
+          <<: *dog_relative
+          name: Dam Naam
+        full_siblings:
+          <<: *dog_relative
+          header: Volledige Siblings
+          name: Volledige Sibling Namen
+        half_siblings:
+          <<: *dog_relative
+          sire_header: Half Siblings van Sire
+          dam_header: Half Siblings van Dam
+          name: Half Sibling Namen
       litter:
         header: 'Informatie Nest:'
         sire: 'Sire:'
@@ -174,15 +210,17 @@ nl:
         call_name: Roepnaam
         footer: 'Merk op dat de Fokker, Sire & Dam worden bepaald door het nest deze hond afkomstig is.'
       nav:
-        owner: Eigenaar
-        breeder: Fokker
-        physical: Fysiek
-        certs: Certs/Testen
-        health: Gezondheid Info
-        studies: Studies
-        titles: Titels/Awards
+        people: Mensen
+        relatives: Verwanten
         litters: Nesten
-        photo: Foto
+        certs: Certs/Testen
+        health: Gezondheid
+        physical: Fysiek
+        studies: Studies
+        titles: Titels
+        photos: Fotos
+        pedigree: Stamboom
+        coi: COI
   trustees:
     president: Voorzitter
     vice_president: Vice-voorzitter

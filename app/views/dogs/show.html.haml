@@ -38,21 +38,23 @@
   %dt.updated>=       t('db.people.last_updated')
   %dd>=               l(@dog.updated_at, :format => :db)
 
-%h3= t('db.dog.subsection.header')
+.nav
+  %ul
+    %li{:class => 'subsection_nav'}>= link_to t('db.dog.nav.people'),    '#people'
+    %li{:class => 'subsection_nav'}>= link_to t('db.dog.nav.relatives'), '#relatives'
+    %li{:class => 'subsection_nav'}>= link_to t('db.dog.nav.litters'),   '#litters'
+    %li{:class => 'subsection_nav'}>= link_to t('db.dog.nav.certs'),     '#certs'
+    %li{:class => 'subsection_nav'}>= link_to t('db.dog.nav.health'),    '#health'
+    %li{:class => 'subsection_nav'}>= link_to t('db.dog.nav.physical'),  '#physical'
+    %li{:class => 'subsection_nav'}>= link_to t('db.dog.nav.studies'),   '#studies'
+    %li{:class => 'subsection_nav'}>= link_to t('db.dog.nav.titles'),    '#titles'
+    %li{:class => 'subsection_nav'}>= link_to t('db.dog.nav.photos'),    '#photos'
+    %li{:class => 'subsection_nav'}>= link_to t('db.dog.nav.pedigree'),  '#pedigree'
+    %li{:class => 'subsection_nav'}>= link_to t('db.dog.nav.coi'),       '#coi'
 
-%ul.nav
-  %li{:class => 'subsection_nav'}>= link_to t('db.dog.nav.owner'),    '#owner'
-  %li{:class => 'subsection_nav'}>= link_to t('db.dog.nav.breeder'),  '#breeder'
-  %li{:class => 'subsection_nav'}>= link_to t('db.dog.nav.physical'), '#physical'
-  %li{:class => 'subsection_nav'}>= link_to t('db.dog.nav.certs'),    '#certs'
-  %li{:class => 'subsection_nav'}>= link_to t('db.dog.nav.health'),   '#health'
-  %li{:class => 'subsection_nav'}>= link_to t('db.dog.nav.studies'),  '#studies'
-  %li{:class => 'subsection_nav'}>= link_to t('db.dog.nav.titles'),   '#titles'
-  %li{:class => 'subsection_nav'}>= link_to t('db.dog.nav.litters'),  '#litters'
-  %li{:class => 'subsection_nav'}>= link_to t('db.dog.nav.photo'),    '#photo'
-
-%a{:name => 'owner'}
-#owner.subsection
+%a{:name => 'people'}
+#people.subsection
+  %h3= t('db.dog.people.owners')
   %table.owner
     %tr
       %th= t('db.dog.owner.bg_id')
@@ -65,48 +67,144 @@
       %td.location= [@dog.owner.city, @dog.owner.state].join(', ').upcase
       %td.reside= t('yes')
 
-%a{:name => 'breeder'}
-#breeder.subsection
-  - unless @dog.litter.nil?
-    %table.owner
+  - if @dog.litter
+    %h3= t('db.dog.people.breeders')
+    %table.breeder
       %tr
         %th= t('db.dog.breeder.bg_id')
         %th= t('db.dog.breeder.name')
         %th= t('db.dog.breeder.location')
-        %th= t('db.dog.breeder.kennel')
       %tr
         %td.bgid= link_to @dog.breeder.id, @dog.breeder
         %td.name= @dog.breeder.full_name.upcase
         %td.location= [@dog.breeder.city, @dog.breeder.state].join(', ').upcase
-        %td.kennel= @dog.breeder.kennel_name.upcase
 
-    %h3= t('db.dog.litter.header')
+%a{:name => 'relatives'}
+#relatives.subsection
+  %h3= t('db.dog.relatives.close.header')
+  %h4= t('db.dog.relatives.close.subheader')
 
-    %table.litter
+  - if @dog.sire
+    %table.sire
       %tr
-        %th
-        %th= t('db.dog.litter.bg_id')
-        %th= t('db.dog.litter.registered_name')
-        %th= t('db.dog.litter.registration')
-        %th= t('db.dog.litter.call_name')
-      %tr.sire
-        %td= t('db.dog.litter.sire')
-        %td.bgid= @dog.litter.sire.id
-        %td.name= @dog.litter.sire.registered_name.upcase
-        %td.registration= @dog.litter.sire.registration
-        %td.name= @dog.litter.sire.call_name.upcase
-      %tr.dam
-        %td= t('db.dog.litter.dam')
-        %td.bgid= @dog.litter.dam.id
-        %td.name= @dog.litter.dam.registered_name.upcase
-        %td.registration= @dog.litter.dam.registration
-        %td.name= @dog.litter.dam.call_name.upcase
+        %th= t('db.dog.relatives.sire.name')
+        %th= t('db.dog.relatives.sire.whelp_date')
+        %th= t('db.dog.relatives.sire.deceased')
+        %th= t('db.dog.relatives.sire.hips')
+        %th= t('db.dog.relatives.sire.elbows')
+        %th= t('db.dog.relatives.sire.eyes')
+        %th= t('db.dog.relatives.sire.heart')
+        %th= t('db.dog.relatives.sire.vwd')
+        %th= t('db.dog.relatives.sire.dm')
+      %tr
+        %td= link_to(@dog.sire.registered_name.upcase, @dog.sire)
+        %td= l(@dog.sire.whelp_date, :format => :db_dog) if @dog.sire.litter
+        %td>
+        %td>
+        %td>
+        %td>
+        %td>
+        %td>
+        %td>
 
-    %p= t('db.dog.litter.footer')
+  - if @dog.dam
+    %table.dam
+      %tr
+        %th= t('db.dog.relatives.dam.name')
+        %th= t('db.dog.relatives.dam.whelp_date')
+        %th= t('db.dog.relatives.dam.deceased')
+        %th= t('db.dog.relatives.dam.hips')
+        %th= t('db.dog.relatives.dam.elbows')
+        %th= t('db.dog.relatives.dam.eyes')
+        %th= t('db.dog.relatives.dam.heart')
+        %th= t('db.dog.relatives.dam.vwd')
+        %th= t('db.dog.relatives.dam.dm')
+      %tr
+        %td= link_to(@dog.dam.registered_name.upcase, @dog.dam)
+        %td= l(@dog.dam.whelp_date, :format => :db_dog) if @dog.dam.litter
+        %td>
+        %td>
+        %td>
+        %td>
+        %td>
+        %td>
+        %td>
 
-%a{:name => 'physical'}
-#physical.subsection
-  I have physical attributes and whatnot
+  %h3= t('db.dog.relatives.full_siblings.header')
+  %table.siblings
+    %tr
+      %th= t('db.dog.relatives.full_siblings.name')
+      %th= t('db.dog.relatives.full_siblings.whelp_date')
+      %th= t('db.dog.relatives.full_siblings.deceased')
+      %th= t('db.dog.relatives.full_siblings.hips')
+      %th= t('db.dog.relatives.full_siblings.elbows')
+      %th= t('db.dog.relatives.full_siblings.eyes')
+      %th= t('db.dog.relatives.full_siblings.heart')
+      %th= t('db.dog.relatives.full_siblings.vwd')
+      %th= t('db.dog.relatives.full_siblings.dm')
+    - @dog.siblings(:full).each do |sib|
+      %tr
+        %td= link_to(sib.registered_name.upcase, sib)
+        %td= l(sib.whelp_date, :format => :db_dog) if sib.litter
+        %td>
+        %td>
+        %td>
+        %td>
+        %td>
+        %td>
+        %td>
+
+  %h3= t('db.dog.relatives.half_siblings.sire_header')
+  %table.siblings
+    %tr
+      %th= t('db.dog.relatives.half_siblings.name')
+      %th= t('db.dog.relatives.half_siblings.whelp_date')
+      %th= t('db.dog.relatives.half_siblings.deceased')
+      %th= t('db.dog.relatives.half_siblings.hips')
+      %th= t('db.dog.relatives.half_siblings.elbows')
+      %th= t('db.dog.relatives.half_siblings.eyes')
+      %th= t('db.dog.relatives.half_siblings.heart')
+      %th= t('db.dog.relatives.half_siblings.vwd')
+      %th= t('db.dog.relatives.half_siblings.dm')
+    - @dog.siblings(:sire).each do |sib|
+      %tr
+        %td= link_to(sib.registered_name.upcase, sib)
+        %td= l(sib.whelp_date, :format => :db_dog) if sib.litter
+        %td>
+        %td>
+        %td>
+        %td>
+        %td>
+        %td>
+        %td>
+
+  %h3= t('db.dog.relatives.half_siblings.dam_header')
+  %table.siblings
+    %tr
+      %th= t('db.dog.relatives.half_siblings.name')
+      %th= t('db.dog.relatives.half_siblings.whelp_date')
+      %th= t('db.dog.relatives.half_siblings.deceased')
+      %th= t('db.dog.relatives.half_siblings.hips')
+      %th= t('db.dog.relatives.half_siblings.elbows')
+      %th= t('db.dog.relatives.half_siblings.eyes')
+      %th= t('db.dog.relatives.half_siblings.heart')
+      %th= t('db.dog.relatives.half_siblings.vwd')
+      %th= t('db.dog.relatives.half_siblings.dm')
+    - @dog.siblings(:dam).each do |sib|
+      %tr
+        %td= link_to(sib.registered_name.upcase, sib)
+        %td= l(sib.whelp_date, :format => :db_dog) if sib.litter
+        %td>
+        %td>
+        %td>
+        %td>
+        %td>
+        %td>
+        %td>
+
+%a{:name => 'litters'}
+#litters.subsection
+  I may have litters
 
 %a{:name => 'certs'}
 #certs.subsection
@@ -116,6 +214,10 @@
 #health.subsection
   I have my health
 
+%a{:name => 'physical'}
+#physical.subsection
+  I have physical attributes and whatnot
+
 %a{:name => 'studies'}
 #studies.subsection
   I have studies
@@ -124,10 +226,14 @@
 #titles.subsection
   I have titles
 
-%a{:name => 'litters'}
-#litters.subsection
-  I may have litters
-
-%a{:name => 'photo'}
-#photo.subsection
+%a{:name => 'photos'}
+#photos.subsection
   I have a photo
+
+%a{:name => 'pedigree'}
+#pedigree.subsection
+  I have a pedigree
+
+%a{:name => 'coi'}
+#coi.subsection
+  I have a coefficient of inbreeding

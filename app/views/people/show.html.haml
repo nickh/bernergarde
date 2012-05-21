@@ -38,26 +38,26 @@
   %dt.last_updated>=     t('db.people.last_updated')
   %dd>=                  l(@person.updated_at, :format => :db)
 
-%h3= t('db.people.subsection.header')
+.nav
+  %ul
+    %li{:class => 'subsection_nav'}>= link_to t('db.people.nav.dogs'),      '#dogs'
+    %li{:class => 'subsection_nav'}>= link_to t('db.people.nav.litters'),   '#litters'
+    %li{:class => 'subsection_nav'}>= link_to t('db.people.nav.clubs'),     '#clubs'
+    %li{:class => 'subsection_nav'}>= link_to t('db.people.nav.household'), '#household'
 
-%ul.nav
-  %li{:class => 'subsection_nav'}>= link_to t('db.people.nav.dogs_owned'),   '#dogs_owned'
-  %li{:class => 'subsection_nav'}>= link_to t('db.people.nav.litters_bred'), '#litters_bred'
-  %li{:class => 'subsection_nav'}>= link_to t('db.people.nav.clubs'),        '#clubs'
-  %li{:class => 'subsection_nav'}>= link_to t('db.people.nav.household'),    '#household'
-
-%a{:name => 'dogs_owned'}
-#dogs_owned.subsection
+%a{:name => 'dogs'}
+#dogs.subsection
+  %h3= t('db.people.dogs.header')
   %table
     %tr
-      %th= t('db.people.dogs_owned.bg_id')
-      %th= t('db.people.dogs_owned.registered_name')
-      %th= t('db.people.dogs_owned.call_name')
-      %th= t('db.people.dogs_owned.sex')
-      %th= t('db.people.dogs_owned.registration')
-      %th= t('db.people.dogs_owned.whelp_date')
-      %th= t('db.people.dogs_owned.reside')
-      %th= t('db.people.dogs_owned.deceased')
+      %th= t('db.people.dogs.bg_id')
+      %th= t('db.people.dogs.registered_name')
+      %th= t('db.people.dogs.call_name')
+      %th= t('db.people.dogs.sex')
+      %th= t('db.people.dogs.registration')
+      %th= t('db.people.dogs.whelp_date')
+      %th= t('db.people.dogs.reside')
+      %th= t('db.people.dogs.deceased')
     - @person.dogs.each do |dog|
       %tr
         %td= link_to dog.id, dog
@@ -69,20 +69,22 @@
         %td YES
         %td= dog.deceased_at
 
-%a{:name => 'litters_bred'}
-#litters_bred.subsection
+%a{:name => 'litters'}
+#litters.subsection
+  %h3= t('db.people.litters.header')
   %table
     %tr
-      %th= t('db.people.litters_bred.litter_id')
-      %th= t('db.people.litters_bred.whelp_date')
-      %th= t('db.people.litters_bred.dam_name')
+      %th= t('db.people.litters.litter_id')
+      %th= t('db.people.litters.whelp_date')
+      %th= t('db.people.litters.dam_name')
     - @person.litters.each do |litter|
       %td= litter.id
-      %td= l(litter.whelp_date)
+      %td= l(litter.whelp_date, :format => :db_people)
       %td= litter.dam.registered_name
 
 %a{:name => 'clubs'}
 #clubs.subsection
+  %h3= t('db.people.clubs.header')
   %dl
     %dt BMDCA Member Status
     %dd= @person.bmdca_status
@@ -94,4 +96,6 @@
 
 %a{:name => 'household'}
 #household.subsection
-  %h3 This is a household subsection
+  %h3= t('db.people.household.header')
+  .detail Multiple people can be linked together into a "household".
+  .detail The following people are linked into this household:

@@ -17,11 +17,12 @@
       .nav
         =render :partial => 'database/nav'
       .main
-        .header
-          %h1= t('db.site.header')
-          %h2= t('db.site.subheader')
-          - if request.method == 'GET'
-            .lang= render :partial => 'shared/lang'
-          .version 4.0
-        .content
-          =yield
+        .roundthis
+          .header
+            %h1= t('db.site.header')
+            %h2= t('db.site.subheader')
+            - if request.method == 'GET'
+              .lang= render :partial => 'shared/lang'
+            .version 4.0
+          .content
+            =yield

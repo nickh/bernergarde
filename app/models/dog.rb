@@ -4,16 +4,33 @@ class Dog < ActiveRecord::Base
   belongs_to :owner, :class_name => 'Person'
   belongs_to :litter
   has_many :litters,
-           :finder_sql => proc {'SELECT litters.* FROM litters WHERE #{litter_foreign_key}=#{id}'},
+           :finder_sql => proc {"SELECT litters.* FROM litters WHERE #{litter_foreign_key}=#{id}"},
            :before_add => :set_litter_parent
   has_many :completed_titles
   has_many :completed_certifications
   has_many :diagnoses
 
-  delegate :breeder, :whelp_date, :to => :litter
+  delegate :breeder, :whelp_date, :sire, :dam, :to => :litter, :allow_nil => true
 
   def male?
     !self.female?
+  end
+
+  def siblings(kind)
+    if sire.nil? || dam.nil?
+      litters = []
+    else
+      litters = case kind
+                when :full
+                  Litter.where(:sire_id => sire, :dam_id => dam)
+                when :sire
+                  Litter.where(:sire_id => sire).where(['dam_id != ?', dam])
+                when :dam
+                  Litter.where(:dam_id => dam).where(['sire_id != ?', sire])
+                end
+    end
+
+    litters.map{|litter| litter.dogs}.flatten
   end
 
   private

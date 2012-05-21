@@ -82,7 +82,7 @@ en:
         submit: Submit Search
         resource: dogs
     people:
-      header: People Detail Info
+      header: People Detail Display
       name: 'Name:'
       bg_id: 'People ID:'
       second_name: 'Second Name:'
@@ -104,14 +104,13 @@ en:
       master_household: 'Master Household Record:'
       data_source: 'Data Source:'
       last_updated: 'Last Updated:'
-      subsection:
-        header: Additional People Detail Information
       nav:
-        dogs_owned: Dogs Owned
-        litters_bred: Litters Bred
+        dogs: Dogs
+        litters: Litters
         clubs: Clubs
         household: Household
-      dogs_owned:
+      dogs:
+        header: Dogs Owned
         bg_id: ID
         registered_name: Registered Name
         call_name: Call Name
@@ -120,12 +119,16 @@ en:
         whelp_date: Whelp Date
         reside: Reside
         deceased: Deceased
-      litters_bred:
+      litters:
+        header: Litters Bred
         litter_id: ID
         whelp_date: Whelp Date
         dam_name: Dam Name
       clubs:
+        header: Berner Club Membership
         name: Name
+      household:
+        header: Household People Linkage
     dog:
       header: Dog Detail Display
       sex: 'Sex:'
@@ -152,18 +155,47 @@ en:
       last_updated: 'Last Updated:'
       registry:
         akc: American Kennel Club
-      subsection:
-        header: Additional Dog Detail Information
+      people:
+        owners: Owner(s)
+        breeders: Breeder(s)
       person: &dog_person
         bg_id: People ID
-        name: Owner Name
-        location: City / State
+        location: Address
         reside: Reside
       owner:
         <<: *dog_person
+        name: Owner Name
       breeder:
         <<: *dog_person
-        kennel: Kennel Name
+        name: Breeder Name
+      relatives:
+        close:
+          header: Close Relatives
+          subheader: 'The following information for close relatives was found in the database:'
+        relative: &dog_relative
+          whelp_date: Whelp Date
+          deceased: Deceased
+          hips: Hips
+          elbows: Elbows
+          eyes: Eyes
+          heart: Heart
+          vwd: vWD
+          dm: DM
+        sire:
+          <<: *dog_relative
+          name: Sire Name
+        dam:
+          <<: *dog_relative
+          name: Dam Name
+        full_siblings:
+          <<: *dog_relative
+          header: Full Siblings
+          name: Full Sibling Names
+        half_siblings:
+          <<: *dog_relative
+          sire_header: Half Siblings by Sire
+          dam_header: Half Siblings by Dam
+          name: Half Sibling Names
       litter:
         header: 'Litter Information:'
         sire: 'Sire:'
@@ -174,15 +206,17 @@ en:
         call_name: Call Name
         footer: 'Note that the Breeder, Sire & Dam are specified by the litter this dog is from.'
       nav:
-        owner: Owner
-        breeder: Breeder
-        physical: Physical
-        certs: Certs/Tests
-        health: Health Info
-        studies: Studies
-        titles: Titles/Awards
+        people: People
+        relatives: Relatives
         litters: Litters
-        photo: Photo
+        certs: Certs/Tests
+        health: Health
+        physical: Physical
+        studies: Studies
+        titles: Titles
+        photos: Photos
+        pedigree: Pedigree
+        coi: COI
   trustees:
     president: President
     vice_president: Vice President
