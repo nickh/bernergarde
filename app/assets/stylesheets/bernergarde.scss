@@ -217,24 +217,27 @@ body.db {
         position: relative;
         width: 100%;
         background: #890000;
-        > h1, h2 {
-          display: inline;
-          font-family: "museo-sans-rounded",sans-serif;
-          margin-left: 20px;
-        }
-        > h1 {
-          color: #E7E7E7;
-          letter-spacing: 2px;
-          text-shadow: -4px 4px 3px #290000;
-          font-weight: 900;
-          font-size: 37px;
-        }
-        > h2 {
-          color: #F4EC8B;
-          letter-spacing: 1px;
-          text-shadow: 4px 4px 3px #290000;
-          font-weight: 900;
-          font-size: 14px;
+        > div.title {
+          filter: progid:DXImageTransform.Microsoft.dropshadow(OffX=-2,OffY=2,Color='#090000',Positive='true');
+          > h1, h2 {
+            display: inline;
+            font-family: "museo-sans-rounded",sans-serif;
+            margin-left: 20px;
+          }
+          > h1 {
+            color: #E7E7E7;
+            letter-spacing: 2px;
+            text-shadow: -4px 4px 3px #290000;
+            font-weight: 900;
+            font-size: 37px;
+          }
+          > h2 {
+            color: #F4EC8B;
+            letter-spacing: 1px;
+            text-shadow: 4px 4px 3px #290000;
+            font-weight: 900;
+            font-size: 14px;
+          }
         }
         > div.lang {
           position: absolute;
@@ -254,12 +257,17 @@ body.db {
           }
         }
         > div.version {
-          float: right;
+          position: absolute;
+          bottom: 0px;
+          right: 0px;
           font-size: 30px;
           font-weight: bold;
           color: #890000;
           text-shadow: 2px 2px 2px #222, -1px -1px 2px #B35C5C;
           margin-right: 15px;
+          filter:
+            progid:DXImageTransform.Microsoft.Glow(Color='#B35C5C',Strength=1)
+            progid:DXImageTransform.Microsoft.dropshadow(OffX=1,OffY=1,Color='#000000',Positive='true');
         }
       }
       > div.roundthis > div.content {
