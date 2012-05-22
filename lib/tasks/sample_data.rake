@@ -2,7 +2,7 @@ namespace :db do
   desc 'Fill database with sample data'
   task :populate => :environment do
     require 'faker'
-    Rake::Task['db:reset'].invoke
+    Rake::Task['db:reset'].invoke if ENV['DB_RESET']
     @breeders = make_breeders
     make_dogs
     make_owners
@@ -54,8 +54,6 @@ def make_dogs
     )
     other_sire = Dog.where(:female => false, :neutered => false).where(['id != ?', sire.id]).first
     other_dam  = Dog.where(:female => true,  :neutered => false).where(['id != ?', dam.id]).first
-    puts "Other sire: #{other_sire.inspect}"
-    puts "Other dam: #{other_dam.inspect}"
 
     make_litter( breeder, sire, dam )
     make_litter( breeder, other_sire, dam ) unless other_sire.nil?
@@ -64,7 +62,6 @@ def make_dogs
 end
 
 def make_litter(breeder, sire, dam)
-  puts "Making a litter for #{breeder.full_name} with sire ##{sire.id} and dam ##{dam.id}"
   litter = Litter.create( # breeder, sire, dam, whelp_date
     :breeder    => breeder,
     :sire       => sire,
@@ -82,9 +79,7 @@ def make_litter(breeder, sire, dam)
       :registry        => 'AKC',
       :litter          => litter
     )
-    puts "  #{puppy.inspect}"
   end
-  puts "  #{litter.dogs.map{|d| d.id}.inspect}"
 end
 
 # Create owners for dogs that don't have them, allow some existing owners to have more than one dog
