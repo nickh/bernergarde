@@ -17,8 +17,14 @@ class DogsController < DatabaseController
   def show
     begin
       @dog = Dog.find(params[:id])
+      respond_to do |format|
+        format.html
+        format.json { render :json => @dog }
+      end
     rescue ActiveRecord::RecordNotFound
-      redirect_to :action => :index
+      respond_to do |format|
+        format.html { redirect_to :action => :index }
+      end
     end
   end
 end
